@@ -8,12 +8,16 @@ todo: index all the numbers in the correct order after having sorted it, then pu
 1 2 3 4 5
 
 
-
+Todo:
+change libft func to work with circular list
+create list putting it all in
+index the list
+write the operations
 
 
 ------------------------------------
 
-void test_sa()
+<!--void test_sa()
 {
 	t_stack *head;
     t_stack *new = ft_lstnew((int)3);
@@ -103,4 +107,4 @@ int main()
         newtest=newtest->next;
     }
     return(0);
-} */
+} */-->
