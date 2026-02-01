@@ -6,21 +6,25 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/01 21:10:08 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/01 23:12:56 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //-------------------------------------------------------------------------------
 
-int main()
+int main(int argc, char **argv)
 {
-	/*if(argc < 2)
+	if(argc < 2)
 	{
-		printf("Not enough arguments");
+		ft_printf("Not enough arguments");
 		return(-1);
-    }*/
-	ft_printf("Not enough arguments");
+    }
+	if(!input_isValid(argc,argv))
+	{
+		ft_printf("Error\n");
+		return(0);
+	}
 	return(1);
 }
 

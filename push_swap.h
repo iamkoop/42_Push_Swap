@@ -20,6 +20,7 @@ typedef struct s_head
     t_stack* last;
 } t_head;
 
+int input_isValid(int argc, char **input);
 void sa(t_stack **a);
 void sb(t_stack **b);
 
