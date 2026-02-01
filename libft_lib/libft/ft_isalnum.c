@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 17:55:06 by nilsdruon        ###   ########.fr       */
+/*   Created: 2025/09/29 16:47:06 by nildruon          #+#    #+#             */
+/*   Updated: 2025/10/16 21:18:22 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void rra()
+int	ft_isalnum(int c)
 {
-	
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+		return (1);
+	return (0);
 }
-void rrb()
+
+/*int	main(void)
 {
-	
-}
-void rrr()
-{
-	
-}
+	printf("%d\n", ft_isalnum(3));
+	printf("%d\n", ft_isalnum('0'));
+	printf("%d\n", ft_isalnum(120));
+}*/

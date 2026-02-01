@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 17:55:06 by nilsdruon        ###   ########.fr       */
+/*   Created: 2025/09/29 14:29:16 by nildruon          #+#    #+#             */
+/*   Updated: 2025/10/17 18:16:44 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+int	ft_isalpha(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
+}
 
-void rra()
+/*
+#include <stdio.h>
+int	main(void)
 {
-	
-}
-void rrb()
-{
-	
-}
-void rrr()
-{
-	
-}
+	printf("%d\n", ft_isalpha(3));
+	printf("%d\n", ft_isalpha('a'));
+	printf("%d\n", ft_isalpha(120));
+}*/

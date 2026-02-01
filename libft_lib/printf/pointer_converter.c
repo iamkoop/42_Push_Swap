@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   pointer_converter.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 17:55:06 by nilsdruon        ###   ########.fr       */
+/*   Created: 2025/10/27 21:01:06 by nildruon          #+#    #+#             */
+/*   Updated: 2026/02/01 21:06:21 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void rra()
+int	print_pointer(void *ptr)
 {
-	
-}
-void rrb()
-{
-	
-}
-void rrr()
-{
-	
+	uintptr_t	nb;
+	int			len;
+
+	if(!ptr)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
+	nb = (uintptr_t)ptr;
+	ft_putstr_fd("0x", 1);
+	len = 2 + print_hex('x', nb, 0);
+	return (len);
 }

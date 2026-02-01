@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 17:55:06 by nilsdruon        ###   ########.fr       */
+/*   Created: 2025/09/30 13:27:07 by nildruon          #+#    #+#             */
+/*   Updated: 2025/10/16 21:21:00 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+int	ft_isprint(int c)
+{
+	if (c < 32 || c > 126)
+		return (0);
+	return (1);
+}
 
-void rra()
+/*
+#include <stdio.h>
+int	main(void)
 {
-	
-}
-void rrb()
-{
-	
-}
-void rrr()
-{
-	
-}
+	printf("%d\n", ft_isprint(3));
+	printf("%d\n", ft_isprint(' '));
+	printf("%d\n", ft_isprint('a'));
+	printf("%d\n", ft_isprint(120));
+}*/

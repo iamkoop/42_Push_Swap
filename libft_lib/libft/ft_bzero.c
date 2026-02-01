@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 17:55:06 by nilsdruon        ###   ########.fr       */
+/*   Created: 2025/10/06 15:25:03 by nildruon          #+#    #+#             */
+/*   Updated: 2026/02/01 19:57:20 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void rra()
+void	ft_bzero(void *s, size_t n)
 {
-	
+	ft_memset(s, '\0', n);
 }
-void rrb()
+
+/*
+#include <unistd.h>
+int main(void)
 {
-	
-}
-void rrr()
-{
-	
-}
+	char str[] = "JUUUUUUUUUUUUUUUUUUUUUUUMP";
+	write(1,&str,10);
+	ft_bzero(str, 5);
+	write(1,&str,10);
+}*/

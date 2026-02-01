@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 17:55:06 by nilsdruon        ###   ########.fr       */
+/*   Created: 2025/10/14 14:26:48 by nildruon          #+#    #+#             */
+/*   Updated: 2025/10/18 14:47:02 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void rra()
+void	ft_putstr_fd(char *s, int fd)
 {
-	
+	write(fd, s, ft_strlen(s));
 }
-void rrb()
+
+/*int main(void)
 {
-	
-}
-void rrr()
-{
-	
-}
+	ft_putstr_fd("My name is.... Iron Man", 1);
+}*/

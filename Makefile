@@ -1,0 +1,52 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
+#    Updated: 2026/02/01 21:07:59 by nilsdruon        ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC = cc
+CFLAGS = -Werror -Wall -Wextra -Ilibft
+
+CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c main.c
+
+OFILES = $(CFILES:.c=.o)
+
+
+NAME = pushswap.a 
+
+HEADER = pushswap.h
+
+LIBFT = libft_lib
+LIBFT_A = $(LIBFT)/libft.a
+CREATE = ar rcs
+
+REMOVE = rm -f
+
+
+%.o: %.c  $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
+
+$(NAME): $(OFILES)
+	@make -C $(LIBFT)
+	@cp $(LIBFT_A) $(NAME)
+	@ar rcs $(NAME) $(OFILES)
+
+fclean: clean
+	$(REMOVE) $(NAME)
+	@make -C $(LIBFT) fclean
+
+clean:
+	$(REMOVE) $(OFILES)
+	@make -C $(LIBFT) clean
+
+re: fclean all
+
+.PHONY: all clean fclean re

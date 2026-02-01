@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:37 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/01/23 17:01:26 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/01 17:57:15 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ void sb(t_stack **b)
 	(*b)->next = temp;
 }
 	
-void ss(t_stack **a, t_stack **b)
+/*void ss(t_stack **a, t_stack **b)
 {
 	sa(*a);
 	sb(*b);
-}
+}*/
 /*void pa()
 {
 	
