@@ -6,14 +6,14 @@
 #    By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2026/02/01 21:07:59 by nilsdruon        ###   ########.fr        #
+#    Updated: 2026/02/01 22:27:59 by nilsdruon        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Werror -Wall -Wextra -Ilibft
 
-CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c main.c
+CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c input_check.c main.c
 
 OFILES = $(CFILES:.c=.o)
 
