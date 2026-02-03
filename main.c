@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/02 23:39:11 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/03 12:46:46 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     }
 	if(!input_isValid(argc,argv))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return(0);
 	}
 	return(1);

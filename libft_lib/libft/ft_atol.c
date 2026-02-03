@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 16:24:54 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/03 17:28:04 by nildruon         ###   ########.fr       */
+/*   Created: 2026/02/03 17:28:40 by nildruon          #+#    #+#             */
+/*   Updated: 2026/02/03 17:33:19 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	num;
+	int		i;
+	long	sign;
+	long	num;
 
 	i = 0;
 	sign = 1;
@@ -39,8 +39,10 @@ int	ft_atoi(const char *nptr)
 }
 
 /* #include <stdio.h>
+#include <stdlib.h>
+
 int	main(void)
 {
-	printf("ft_atoi: %d\n", ft_atoi("   -123"));
-	printf("atoi: %d\n", atoi("    -123"));
+	printf("ft_atol: %ld\n", ft_atol("2147483650"));
+	printf("atol: %ld\n", atol("2147483650"));
 } */

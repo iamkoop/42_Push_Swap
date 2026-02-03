@@ -11,7 +11,8 @@ todo: index all the numbers in the correct order after having sorted it, then pu
 Todo:
 input check:
 -> check for doubles in the input
--> rest works
+-> need to check length of each num. if its biggger than 10 ret 0, if its 10 use atol and check for int min and max
+-> multiple args dont work.... ./push_swap "12" "123" "5"
 change libft func to work with circular list
 create list putting it all in
 index the list
