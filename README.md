@@ -9,6 +9,9 @@ todo: index all the numbers in the correct order after having sorted it, then pu
 
 
 Todo:
+input check:
+-> check for doubles in the input
+-> rest works
 change libft func to work with circular list
 create list putting it all in
 index the list

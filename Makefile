@@ -3,22 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+         #
+#    By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2026/02/01 22:27:59 by nilsdruon        ###   ########.fr        #
+#    Updated: 2026/02/02 23:44:38 by nildruon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Werror -Wall -Wextra -Ilibft
+CFLAGS = -Werror -Wall -Wextra -g -Ilibft
 
-CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c input_check.c main.c
+CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c \
+input_check.c lst_utils.c create_stack.c\
+main.c
 
 OFILES = $(CFILES:.c=.o)
 
 
-NAME = pushswap.a 
+NAME = push_swap
 
 HEADER = pushswap.h
 
@@ -36,8 +38,7 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	@make -C $(LIBFT)
-	@cp $(LIBFT_A) $(NAME)
-	@ar rcs $(NAME) $(OFILES)
+	@$(CC) $(CFLAGS) $(OFILES) $(LIBFT_A) -o $(NAME)
 
 fclean: clean
 	$(REMOVE) $(NAME)

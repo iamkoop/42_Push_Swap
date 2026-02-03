@@ -21,6 +21,8 @@ typedef struct s_head
 } t_head;
 
 int input_isValid(int argc, char **input);
+int *convert_input_to_arr(int argc, char **argv);
+t_stack	*ps_lstnew(int content);
 void sa(t_stack **a);
 void sb(t_stack **b);
 
