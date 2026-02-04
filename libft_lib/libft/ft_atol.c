@@ -6,13 +6,15 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 17:28:40 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/03 17:33:19 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:44:27 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 long	ft_atol(const char *nptr)
 {
-	int		i;
+	long	i;
 	long	sign;
 	long	num;
 
@@ -35,7 +37,8 @@ long	ft_atol(const char *nptr)
 		num = (num * 10) + (nptr[i] - '0');
 		i++;
 	}
-	return (num * sign);
+	i = num * sign;
+	return (i);
 }
 
 /* #include <stdio.h>

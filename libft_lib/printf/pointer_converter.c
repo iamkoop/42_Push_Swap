@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pointer_converter.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:01:06 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 21:06:21 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/04 15:06:32 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	print_pointer(void *ptr)
 	uintptr_t	nb;
 	int			len;
 
-	if(!ptr)
+	if (!ptr)
 	{
 		ft_putstr_fd("(nil)", 1);
 		return (5);

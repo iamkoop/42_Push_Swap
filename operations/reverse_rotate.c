@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/01 17:55:06 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/04 15:06:56 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void rra()
+/* void rra()
 {
 	
 }
@@ -23,4 +23,4 @@ void rrb()
 void rrr()
 {
 	
-}
+} */

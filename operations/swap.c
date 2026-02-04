@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:37 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/01 17:57:15 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/04 15:07:35 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void sa(t_stack **a)
+/* void sa(t_stack **a)
 {
 	t_stack *temp;
 	
@@ -35,7 +35,7 @@ void sb(t_stack **b)
 	temp->next = (*b)->next;
 	(*b)->next = temp;
 }
-	
+ */	
 /*void ss(t_stack **a, t_stack **b)
 {
 	sa(*a);
@@ -49,4 +49,3 @@ void pb()
 {
 	
 } */
-

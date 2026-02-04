@@ -6,12 +6,11 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:07:04 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/02 15:47:15 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/04 15:05:41 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int	print_arg_helper(char c, va_list arg)
 {
@@ -118,7 +117,8 @@ int	ft_printf(const char *format, ...)
 {
 	int		count_var;
 	va_list	arg;
-	if(!format)
+
+	if (!format)
 		return (-1);
 	va_start(arg, format);
 	if (ft_strlen(format) == 0)
@@ -128,7 +128,6 @@ int	ft_printf(const char *format, ...)
 	va_end(arg);
 	return (count_var);
 }
-
 
 /*int main(void)
 {

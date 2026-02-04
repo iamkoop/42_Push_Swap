@@ -6,12 +6,12 @@
 #    By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2026/02/03 17:33:59 by nildruon         ###   ########.fr        #
+#    Updated: 2026/02/04 14:12:49 by nildruon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Werror -Wall -Wextra -I.
+CFLAGS = -Werror -Wall -Wextra -g -I.
 
 LIBFT = libft/ft_isalnum.c libft/ft_isprint.c libft/ft_memcpy.c libft/ft_putendl_fd.c libft/ft_strchr.c libft/ft_strlcat.c libft/ft_strncmp.c libft/ft_substr.c \
 libft/ft_atoi.c libft/ft_atol.c libft/ft_isalpha.c libft/ft_itoa.c libft/ft_memmove.c libft/ft_putnbr_fd.c libft/ft_strdup.c libft/ft_strlcpy.c libft/ft_strnstr.c libft/ft_tolower.c \
