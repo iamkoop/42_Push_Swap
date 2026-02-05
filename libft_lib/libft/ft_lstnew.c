@@ -6,22 +6,24 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:27:09 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/04 15:11:26 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/05 19:05:31 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_stack	*ft_lstnew(int content, int index)
 {
-	t_list	*new;
+	t_stack	*new;
 
 	if (!content)
 		return (NULL);
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
-	new->content = content;
+	new->data = content;
+	new->index = index;
+	new->prev = NULL;
 	new->next = NULL;
 	return (new);
 }

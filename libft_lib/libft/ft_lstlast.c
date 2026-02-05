@@ -6,15 +6,15 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:37:36 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/04 15:12:41 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/05 18:12:47 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_list	*l;
+	t_stack	*l;
 
 	if (!lst)
 		return (NULL);

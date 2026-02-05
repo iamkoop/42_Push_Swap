@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:21:27 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/04 15:23:16 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/05 20:54:23 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,19 @@
 # include <stdint.h>
 # include <stdarg.h>
 //Libft
-typedef struct s_list
+typedef struct s_stack
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+	int				data;
+	int				index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_stack;
+
+typedef struct s_stacks
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+}	t_stacks;
 
 int			ft_atoi(const char *nptr);
 long		ft_atol(const char *nptr);
@@ -59,13 +67,14 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
-t_list		*ft_lstnew(void *content);
-void		ft_lstadd_front(t_list **lst, t_list *new);
-int			ft_lstsize(t_list *lst);
-t_list		*ft_lstlast(t_list *lst);
-void		ft_lstadd_back(t_list **lst, t_list *new);
-void		ft_lstdelone(t_list *lst, void (*del)(void*));
-void		ft_lstclear(t_list **lst, void (*del)(void*));
+t_stack	*ft_lstnew(int content, int index);
+void	ft_lstadd(t_stack **lst, t_stack *new);
+void		ft_lstadd_front(t_stack **lst, t_stack *new);
+int			ft_lstsize(t_stack *lst);
+t_stack		*ft_lstlast(t_stack *lst);
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
+void		ft_lstdelone(t_stack *lst, void (*del)(void*));
+void		ft_lstclear(t_stack **lst, void (*del)(void*));
 //Printf
 int			print_hex(char c, uintptr_t nb, int len);
 int			print_pointer(void *ptr);

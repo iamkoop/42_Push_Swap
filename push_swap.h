@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/04 15:34:07 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/05 20:40:47 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,12 @@
 # include <unistd.h>
 # include "libft_lib/libft.h"
 
-typedef struct s_stack
-{
-	int				data;
-	int				index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
-
-typedef struct s_head
-{
-	t_stack	*first;
-	t_stack	*last;
-}	t_head;
 
 int		input_is_valid(int argc, char **input);
+int	**unsorted_and_sorted(char	**input, int argc, int *size);
+t_stack	*create_initial_stack(char	**input, int argc);
 //int *convert_input_to_arr(int argc, char **argv);
-t_stack	*ps_lstnew(int content);
+t_stack	*ps_lstnew(int content, int index);
 //void sa(t_stack **a);
 //void sb(t_stack **b);
 

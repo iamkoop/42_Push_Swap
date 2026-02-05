@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 14:19:46 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/04 15:13:32 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/05 21:15:26 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void del_content(void *content)
     free(content);
 } */
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+/* void	ft_lstdelone(t_stack *lst, void (*del)(void*))
 {
 	if (!lst || !del)
 		return ;
-	del(lst->content);
+	del(lst->data);
 	free(lst);
-}
+} */
 
 /* int main(void)
 {

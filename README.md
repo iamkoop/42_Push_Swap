@@ -1,20 +1,13 @@
 # 42_Push_Swap
 
-todo: index all the numbers in the correct order after having sorted it, then push it around
-3 5 8 1 4
-
-1 3 4 5 8
-
-1 2 3 4 5
-
-
 Todo's:
 input check ✅
 create stack:
--> convert to int array
+-> convert to int array ✅
 -> store the sorted array in an extra int array
 -> create stack. find location of in the sorted array of the int and write the right index directly
-write the operations
+
+write operations:
 
 
 ------------------------------------

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_utils.c                                        :+:      :+:    :+:   */
+/*   ft_lst_add.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 12:08:30 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/04 15:24:51 by nildruon         ###   ########.fr       */
+/*   Created: 2026/02/05 18:35:38 by nildruon          #+#    #+#             */
+/*   Updated: 2026/02/05 21:16:02 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*ps_lstnew(int data)
+void	ft_lstadd(t_stack **lst, t_stack *new)
 {
-	t_stack	*new;
-
-	if (!data)
-		return (NULL);
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->data = data;
-	new->next = NULL;
-	return (new);
+	new->next = *lst;
+	new->prev = (*lst)->prev;
+	
+	(*lst)->prev->next = new;
+	(*lst)->prev = new;
 }

@@ -6,15 +6,15 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:55:23 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/04 15:17:35 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/05 18:25:05 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list	*l;
+	t_stack	*l;
 
 	if (!lst || !new)
 		return ;
