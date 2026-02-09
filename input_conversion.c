@@ -6,37 +6,40 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:23:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/10 00:25:24 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 00:38:43 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *convert_input_to_i_arr(char **input, int *size)
+t_arr *convert_input_to_i_arr(char **input)
 {
 	int i;
 	int k;
-	int *arr;
+	t_arr *arr;
 
+	arr = malloc(sizeof(t_arr));
+	if (!arr)
+		return (NULL);
 	k = 1;
 	i = 1;
 	while (input[i])
 		i++;
-	arr = malloc(sizeof(int) * i);
+	arr->arr = malloc(sizeof(int) * i);
 	if (!arr)
 		return (NULL);
 	i = 0;
 	while (input[k])
 	{
-		arr[i] = ft_atoi(input[k]);
+		arr->arr[i] = ft_atoi(input[k]);
 		i++;
 		k++;
 	}
-	*size = k - 1;
+	arr->count = k - 1;
 	return (arr);
 }
 
-int **unsorted_and_sorted(char **input, int *size)
+/*int **unsorted_and_sorted(t_arr *arr)
 {
 	int *unsorted;
 	int *sorted;
@@ -55,20 +58,18 @@ int **unsorted_and_sorted(char **input, int *size)
 	unsorted_and_sorted[0] = unsorted;
 	unsorted_and_sorted[1] = sorted;
 	return (unsorted_and_sorted);
-}
+}*/
 
-
-int **unsorted_and_sorted(int **input, int *size)
+int **unsorted_and_sorted(t_arr *arr)
 {
 	int *unsorted;
 	int *sorted;
 	int **unsorted_and_sorted;
 
-	unsorted = NULL;
-	unsorted = convert_input_to_i_arr(input, size);
+	unsorted = arr->arr;
 	if (!unsorted)
 		return (NULL);
-	sorted = sorted_arr(unsorted, *size);
+	sorted = sorted_arr(unsorted, arr->count);
 	if (!sorted)
 		return (free(unsorted), NULL);
 	unsorted_and_sorted = malloc(sizeof(int *) * 2);

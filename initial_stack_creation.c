@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 19:16:58 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/10 00:08:10 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 00:44:19 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,14 @@ t_stack *create_initial_stack_from_args(char **input)
 	int size;
 	t_stack *stack;
 	t_stack *new;
-	int *input_arr;
+	t_arr *input_arr;
 
 	size = 0;
 
-	input_arr = convert_input_to_i_arr(input, &size);
+	input_arr = convert_input_to_i_arr(input);
 	if (!input_arr)
 		return (NULL);
-	arrays = unsorted_and_sorted(input, &size);
+	arrays = unsorted_and_sorted(input_arr);
 	if (!arrays)
 		return (NULL);
 	new = ft_lstnew(arrays[0][0], find_index(arrays[0][0], arrays[1], size));
@@ -90,7 +90,7 @@ t_stack *create_initial_stack_from_args(char **input)
 	stack = new;
 	if (!stack)
 		return (NULL);
-	if (!fill_stack(arrays, new, new, size))
+	if (!fill_stack(arrays, new, new, input_arr->count))
 		return (NULL);
 	return (stack);
 }
