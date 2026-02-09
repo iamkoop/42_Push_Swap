@@ -6,18 +6,18 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:23:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/07 16:24:56 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/09 22:58:42 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	selection_sort(int *arr, int size)
+static void selection_sort(int *arr, int size)
 {
-	int	a;
-	int	b;
-	int	smallest;
-	int	temp;
+	int a;
+	int b;
+	int smallest;
+	int temp;
 
 	a = 0;
 	smallest = 0;
@@ -39,14 +39,14 @@ static void	selection_sort(int *arr, int size)
 	}
 }
 
-static int	*sorted_arr(int *arr, int size)
+static int *sorted_arr(int *arr, int size)
 {
 	int *ret;
 	int i;
-	
+
 	i = 0;
 	ret = malloc(sizeof(int) * size);
-	if(!ret)
+	if (!ret)
 		return (NULL);
 	while (i < size)
 	{
@@ -57,17 +57,19 @@ static int	*sorted_arr(int *arr, int size)
 	return (ret);
 }
 
-static int *convert_input_to_i_arr(char **input, int k, int *size)
+static int *convert_input_to_i_arr(char **input, int *size)
 {
 	int i;
+	int k;
 	int *arr;
 
-	i = k;
+	k = 1;
+	i = 1;
 	while (input[i])
 		i++;
 	arr = malloc(sizeof(int) * i);
-	if(!arr)
-		return(NULL);
+	if (!arr)
+		return (NULL);
 	i = 0;
 	while (input[k])
 	{
@@ -75,56 +77,27 @@ static int *convert_input_to_i_arr(char **input, int k, int *size)
 		i++;
 		k++;
 	}
-	*size = k;
+	*size = k - 1;
 	return (arr);
 }
 
-static int **free_and_return(int *arr, int **unsorted_and_sorted, char **nums)
+int **unsorted_and_sorted(char **input, int *size)
 {
-	int i;
-
-	i = 0;
-	if(arr)
-		free(arr);
-	if(unsorted_and_sorted)
-		free(unsorted_and_sorted);
-	if(nums)
-	{
-		while(nums[i])
-		{
-			free(nums[i]);
-			i++;
-		}
-		free(nums);
-	}
-	return (NULL);
-}
-
-int	**unsorted_and_sorted(char	**input, int argc, int *size)
-{
-	int *arr;
-	char **nums;
+	int *unsorted;
 	int *sorted;
 	int **unsorted_and_sorted;
-	
-	arr = NULL;
-	nums = NULL;
-	if(argc > 2)
-		arr = convert_input_to_i_arr(input, 0, size);
-	else if(argc == 2)
-	{
-		nums = ft_split(input[1], ' ');
-		if(!nums)
-			return (NULL);
-		arr = convert_input_to_i_arr(nums, 0, size);
-	}
-	unsorted_and_sorted = malloc(sizeof(int*) * 2);
-	if(!arr || !unsorted_and_sorted || !nums)
-		return (free_and_return(arr, unsorted_and_sorted, nums));
-	sorted = sorted_arr(arr, *size);
-	if(!sorted)
+
+	unsorted = NULL;
+	unsorted = convert_input_to_i_arr(input, size);
+	if (!unsorted)
 		return (NULL);
-	unsorted_and_sorted[0] = arr;
+	sorted = sorted_arr(unsorted, *size);
+	if (!sorted)
+		return (free(unsorted), NULL);
+	unsorted_and_sorted = malloc(sizeof(int *) * 2);
+	if (!unsorted_and_sorted)
+		return (free(unsorted), free(sorted), NULL);
+	unsorted_and_sorted[0] = unsorted;
 	unsorted_and_sorted[1] = sorted;
-	return(unsorted_and_sorted);
+	return (unsorted_and_sorted);
 }
