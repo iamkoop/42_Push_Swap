@@ -3,29 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:33:43 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/05 21:15:38 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/09 16:09:38 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	ft_lstclear(t_stack **lst, void (*del)(void*))
-{
-	t_stack	*comp;
+void ft_lstclear(t_stack **lst) {
+  t_stack *comp;
 
-	comp = *lst;
-	while (*lst)
-	{
-		del(comp->data);
-		*lst = comp->next;
-		free(comp);
-		comp = *lst;
-	}
-	*lst = NULL;
-} */
+  comp = *lst;
+  while (*lst) {
+    *lst = comp->next;
+    free(comp);
+    comp = *lst;
+  }
+  *lst = NULL;
+}
 
 /* #include <stdio.h>
 #include <string.h>

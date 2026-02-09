@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/09 11:30:23 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/09 15:32:58 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void print_stack(t_stack *stack)
 		stack = stack->next;
 		cnt++;
 	}
-	ft_lstclear(stack);
 }
 
 int	main(int argc, char **argv)
@@ -81,5 +80,6 @@ int	main(int argc, char **argv)
 	print_stack(stacks->stack_a);
 	if(!stacks)
 		return(0);
+	free(stacks);
 	return (1);
 }

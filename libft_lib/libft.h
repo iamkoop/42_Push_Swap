@@ -74,7 +74,7 @@ int			ft_lstsize(t_stack *lst);
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstdelone(t_stack *lst, void (*del)(void*));
-void		ft_lstclear(t_stack **lst, void (*del)(void*));
+void		ft_lstclear(t_stack **lst);
 //Printf
 int			print_hex(char c, uintptr_t nb, int len);
 int			print_pointer(void *ptr);
