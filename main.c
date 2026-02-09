@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/09 22:43:31 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 00:25:13 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void print_stack(t_stack *stack)
 int main(int argc, char **argv)
 {
 	t_stacks *stacks;
+	
 	if (argc < 2)
 	{
 		write(2, "Error\n", 6);
@@ -75,7 +76,7 @@ int main(int argc, char **argv)
 	stacks = create_stacks();
 	if (!stacks)
 		return (0);
-	stacks->stack_a = create_initial_stack(argv);
+	stacks->stack_a = create_initial_stack_from_args(argv);
 	if (!stacks->stack_a)
 		return (0);
 	print_stack(stacks->stack_a);

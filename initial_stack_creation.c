@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 19:16:58 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/09 22:57:07 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 00:08:10 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,19 @@ static int fill_stack(int **i_arrs, t_stack *new, t_stack *first, int size)
 	return (1);
 }
 
-t_stack *create_initial_stack(char **input)
+t_stack *create_initial_stack_from_args(char **input)
 {
 	int **arrays;
 	int size;
 	t_stack *stack;
 	t_stack *new;
+	int *input_arr;
 
 	size = 0;
+
+	input_arr = convert_input_to_i_arr(input, &size);
+	if (!input_arr)
+		return (NULL);
 	arrays = unsorted_and_sorted(input, &size);
 	if (!arrays)
 		return (NULL);
