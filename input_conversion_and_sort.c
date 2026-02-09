@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_conversion_and_sort.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:23:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/06 00:04:11 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/07 16:24:56 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ static void	selection_sort(int *arr, int size)
 	int	b;
 	int	smallest;
 	int	temp;
-	int	cnt;
 
 	a = 0;
 	smallest = 0;
 	temp = 0;
-	cnt = 0;
 	while (a < size)
 	{
 		b = a;
@@ -81,12 +79,24 @@ static int *convert_input_to_i_arr(char **input, int k, int *size)
 	return (arr);
 }
 
-static int **free_and_return(int *arr, int **unsorted_and_sorted)
+static int **free_and_return(int *arr, int **unsorted_and_sorted, char **nums)
 {
-	if(!arr && unsorted_and_sorted)
-		free(unsorted_and_sorted);
-	else if(arr && unsorted_and_sorted)
+	int i;
+
+	i = 0;
+	if(arr)
 		free(arr);
+	if(unsorted_and_sorted)
+		free(unsorted_and_sorted);
+	if(nums)
+	{
+		while(nums[i])
+		{
+			free(nums[i]);
+			i++;
+		}
+		free(nums);
+	}
 	return (NULL);
 }
 
@@ -98,6 +108,7 @@ int	**unsorted_and_sorted(char	**input, int argc, int *size)
 	int **unsorted_and_sorted;
 	
 	arr = NULL;
+	nums = NULL;
 	if(argc > 2)
 		arr = convert_input_to_i_arr(input, 0, size);
 	else if(argc == 2)
@@ -108,8 +119,8 @@ int	**unsorted_and_sorted(char	**input, int argc, int *size)
 		arr = convert_input_to_i_arr(nums, 0, size);
 	}
 	unsorted_and_sorted = malloc(sizeof(int*) * 2);
-	if(!arr || !unsorted_and_sorted)
-		return (free_and_return(arr, unsorted_and_sorted));
+	if(!arr || !unsorted_and_sorted || !nums)
+		return (free_and_return(arr, unsorted_and_sorted, nums));
 	sorted = sorted_arr(arr, *size);
 	if(!sorted)
 		return (NULL);

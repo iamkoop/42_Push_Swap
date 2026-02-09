@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initial_stack_creation.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 19:16:58 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/05 23:55:02 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/07 14:22:07 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

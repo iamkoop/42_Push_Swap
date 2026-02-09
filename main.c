@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/05 23:39:48 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/09 11:30:23 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void print_stack(t_stack *stack)
 	printf("-----------------------------------------------------------------------------\n");
 	printf("Node %d\n", cnt);
 	printf("data       :%d\n", stack->data);
+	printf("curr index :%d\n", stack->index);
 	printf("prev index :%d\n", stack->prev->index);
 	printf("next index :%d\n", stack->next->index);
 	printf("-----------------------------------------------------------------------------\n");
@@ -45,13 +46,14 @@ void print_stack(t_stack *stack)
 		printf("-----------------------------------------------------------------------------\n");
 		printf("Node %d\n", cnt);
 		printf("data       :%d\n", stack->data);
+		printf("curr index :%d\n", stack->index);
 		printf("prev index :%d\n", stack->prev->index);
 		printf("next index :%d\n", stack->next->index);
 		printf("-----------------------------------------------------------------------------\n");
 		stack = stack->next;
 		cnt++;
 	}
-	
+	ft_lstclear(stack);
 }
 
 int	main(int argc, char **argv)

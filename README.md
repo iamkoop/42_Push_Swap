@@ -1,5 +1,9 @@
 # 42_Push_Swap
 
+5 Nums in 12 operations or less
+3 in 3
+2 in 1
+
 Todo's:
 input check ✅
 create stack:
@@ -8,6 +12,12 @@ create stack:
 -> create stack. find location of in the sorted array of the int and write the right index directly
 
 write operations:
+
+write a plan
+
+include and test the checker
+antigravity
+pdf into the project (doc/folder)
 
 
 ------------------------------------
