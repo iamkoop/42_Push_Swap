@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 19:16:58 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/10 00:44:19 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 00:56:55 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,30 +63,21 @@ static int fill_stack(int **i_arrs, t_stack *new, t_stack *first, int size)
 	return (1);
 }
 
-t_stack *create_initial_stack_from_args(char **input)
+t_stack *create_initial_stack(t_arr *input_arr)
 {
 	int **arrays;
 	int size;
 	t_stack *stack;
 	t_stack *new;
-	t_arr *input_arr;
 
 	size = 0;
 
-	input_arr = convert_input_to_i_arr(input);
-	if (!input_arr)
-		return (NULL);
 	arrays = unsorted_and_sorted(input_arr);
 	if (!arrays)
 		return (NULL);
 	new = ft_lstnew(arrays[0][0], find_index(arrays[0][0], arrays[1], size));
 	if (!new)
-	{
-		free(arrays[0]);
-		free(arrays[1]);
-		free(arrays);
-		return (NULL);
-	}
+		return (free(arrays[0]), free(arrays[1]), free(arrays), NULL);
 	stack = new;
 	if (!stack)
 		return (NULL);

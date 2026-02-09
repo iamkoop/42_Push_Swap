@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:23:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/10 00:38:43 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 00:57:40 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,6 @@ t_arr *convert_input_to_i_arr(char **input)
 	arr->count = k - 1;
 	return (arr);
 }
-
-/*int **unsorted_and_sorted(t_arr *arr)
-{
-	int *unsorted;
-	int *sorted;
-	int **unsorted_and_sorted;
-
-	unsorted = NULL;
-	unsorted = convert_input_to_i_arr(input, size);
-	if (!unsorted)
-		return (NULL);
-	sorted = sorted_arr(unsorted, *size);
-	if (!sorted)
-		return (free(unsorted), NULL);
-	unsorted_and_sorted = malloc(sizeof(int *) * 2);
-	if (!unsorted_and_sorted)
-		return (free(unsorted), free(sorted), NULL);
-	unsorted_and_sorted[0] = unsorted;
-	unsorted_and_sorted[1] = sorted;
-	return (unsorted_and_sorted);
-}*/
 
 int **unsorted_and_sorted(t_arr *arr)
 {
