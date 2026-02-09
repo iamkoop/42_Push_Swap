@@ -1,0 +1,79 @@
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.quickSuggestions": {
+            "other": false,
+            "comments": false,
+            "strings": false
+        },
+        "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    // Completions and Suggestions
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.snippetSuggestions": "none",
+    "editor.wordBasedSuggestions": "off",
+    "editor.suggest.showWords": false,
+    "editor.suggest.showSnippets": false,
+    
+    // Ghost Text / Inline Suggestions
+    "editor.inlineSuggest.enabled": false,
+    
+    // Parameter Hints
+    "editor.parameterHints.enabled": false,
+
+    // Hover Info
+    "editor.hover.enabled": "off",
+    
+    // Inlay Hints (Ghost text inside correct lines)
+    "editor.inlayHints.enabled": "off",
+
+    // Lightbulb / Code Actions
+    "editor.lightbulb.enabled": "off",
+    "editor.codeLens": false,
+
+    // C/C++ Extension specific (disabling intellisense engine to avoid conflicts if using clangd)
+    "C_Cpp.autocomplete": "disabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.errorSquiggles": "disabled",
+
+    // Other UI annoyances
+    "editor.occurrencesHighlight": "off",
+    "editor.selectionHighlight": false,
+    
+    // Explicitly disable suggest categories
+    "editor.suggest.showClasses": false,
+    "editor.suggest.showColors": false,
+    "editor.suggest.showConstants": false,
+    "editor.suggest.showConstructors": false,
+    "editor.suggest.showCustomcodes": false,
+    "editor.suggest.showEnumMembers": false,
+    "editor.suggest.showEnums": false,
+    "editor.suggest.showEvents": false,
+    "editor.suggest.showFields": false,
+    "editor.suggest.showFiles": false,
+    "editor.suggest.showFolders": false,
+    "editor.suggest.showFunctions": false,
+    "editor.suggest.showInterfaces": false,
+    "editor.suggest.showIssues": false,
+    "editor.suggest.showKeywords": false,
+    "editor.suggest.showMethods": false,
+    "editor.suggest.showModules": false,
+    "editor.suggest.showOperators": false,
+    "editor.suggest.showProperties": false,
+    "editor.suggest.showReferences": false,
+    "editor.suggest.showStructs": false,
+    "editor.suggest.showTypeParameters": false,
+    "editor.suggest.showUnits": false,
+    "editor.suggest.showUser": false,
+    "editor.suggest.showValues": false,
+    "editor.suggest.showVariables": false,
+    "editor.suggest.showText": false
+}
