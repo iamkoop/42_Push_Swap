@@ -5,11 +5,20 @@
             "label": "build",
             "type": "shell",
             "command": "make",
-            "args": ["re"],
+            "args": [
+                "re"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "problemMatcher": []
+        },
+        {
+            "label": "build_test_swap",
+            "type": "shell",
+            "command": "make -C libft_lib && gcc -g -I. -Ilibft_lib tests/test_swap.c initial_stack_creation.c input_conversion.c input_sort.c operations/swap.c libft_lib/libft.a -o tests/test_swap_bin",
+            "group": "build",
             "problemMatcher": []
         }
     ]

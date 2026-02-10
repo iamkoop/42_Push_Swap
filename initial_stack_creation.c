@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 19:16:58 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/10 00:56:55 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 01:20:39 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stack *create_initial_stack(t_arr *input_arr)
 	t_stack *stack;
 	t_stack *new;
 
-	size = 0;
+	size = input_arr->count;
 
 	arrays = unsorted_and_sorted(input_arr);
 	if (!arrays)
