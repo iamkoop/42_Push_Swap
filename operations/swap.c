@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:37 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/10 02:09:40 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 21:03:01 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,63 +16,104 @@ void sa(t_stack **a)
 {
 	t_stack *tmp;
 
-	if (!a || (*a)->next == NULL)
+	if (!a || (*a)->next == (*a))
 		return;
-	tmp = (*a)->next;
-	tmp->prev = (*a)->prev;
-	(*a)->next = tmp->next;
-	tmp->next = (*a);
-	(*a)->prev = tmp;
+	if ((*a)->next->next == *a)
+	{
+		*a = (*a)->next;
+	}
+	else
+	{
+		tmp = (*a)->next;
+		tmp->next->prev = *a;
+		(*a)->prev->next = tmp;
+		(*a)->next = tmp->next;
+		tmp->prev = (*a)->prev;
+		tmp->next = *a;
+		(*a)->prev = tmp;
+		*a = tmp;
+	}
 }
 
-void sb(t_stack *b)
+void sb(t_stack **b)
 {
-	t_stack *temp;
+	t_stack *tmp;
 
-	if (!b || b->next == NULL)
+	if (!b || (*b)->next == (*b))
 		return;
-	temp = b;
-	b = b->next;
-	temp->next = b->next;
-	b->next = temp;
+	if ((*b)->next->next == *b)
+	{
+		*b = (*b)->next;
+	}
+	else
+	{
+		tmp = (*b)->next;
+		tmp->next->prev = *b;
+		(*b)->prev->next = tmp;
+		(*b)->next = tmp->next;
+		tmp->prev = (*b)->prev;
+		tmp->next = *b;
+		(*b)->prev = tmp;
+		*b = tmp;
+	}
 }
-void ss(t_stack *a, t_stack *b)
+void ss(t_stack **a, t_stack **b)
 {
-	sa(&a);
+	sa(a);
 	sb(b);
 }
 
-void pa(t_stack *a, t_stack *b)
+void pa(t_stack **a, t_stack **b)
 {
 	t_stack *tmp;
-	t_stack *node;
-	if (!b)
+
+	if (!b || !*b)
 		return;
-	node = b;
-	tmp = b->next;
-	b->prev->next = b->next;
-	b->next->prev = b->prev;
-	b = tmp;
-	node->prev = a->prev;
-	a->prev->next = node;
-	node->next = a;
-	a->prev = node;
-	a = node;
+	tmp = *b;
+	*b = tmp->next;
+	if (tmp->next == tmp)
+		*b = NULL;
+	tmp->next->prev = tmp->prev;
+	tmp->prev->next = tmp->next;
+	if (!*a)
+	{
+		*a = tmp;
+		tmp->next = *a;
+		tmp->prev = *a;
+	}
+	else
+	{
+		tmp->prev = (*a)->prev;
+		tmp->next = *a;
+		(*a)->prev->next = tmp;
+		(*a)->prev = tmp;
+		*a = (*a)->prev;
+	}
 }
-void pb(t_stack *a, t_stack *b)
+void pb(t_stack **a, t_stack **b)
 {
 	t_stack *tmp;
-	t_stack *node;
-	if (!a)
+
+	if (!b || !*a)
 		return;
-	node = a;
-	tmp = a->next;
-	a->prev->next = a->next;
-	a->next->prev = a->prev;
-	a = tmp;
-	node->prev = b->prev;
-	b->prev->next = node;
-	node->next = b;
-	b->prev = node;
-	b = node;
+	tmp = *a;
+	*a = tmp->next;
+	if (tmp->next == tmp)
+		*a = NULL;
+	tmp->next->prev = tmp->prev;
+	tmp->prev->next = tmp->next;
+	if (!*b)
+	{
+		*b = tmp;
+		tmp->next = *b;
+		tmp->prev = *b;
+	}
+	else
+	{
+		tmp->prev = (*b)->prev;
+		tmp->next = *b;
+		(*b)->prev->next = tmp;
+		(*b)->prev = tmp;
+		*b = (*b)->prev;
+	}
 }

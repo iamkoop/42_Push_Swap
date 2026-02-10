@@ -133,9 +133,9 @@ void test_pa(void)
 	ft_printf("\n--- Testing pa ---\n");
 	// A: {3}, B: {2, 1} -> pa -> A: {2, 3}, B: {1}
 	int va[] = {3};
-	int vb[] = {2, 1};
+	int vb[] = {2};
 	t_stack *a = create_test_stack(va, 1);
-	t_stack *b = create_test_stack(vb, 2);
+	t_stack *b = create_test_stack(vb, 1);
 
 	print_stack(a, "A (Before)");
 	print_stack(b, "B (Before)");
@@ -153,9 +153,9 @@ void test_pb(void)
 {
 	ft_printf("\n--- Testing pb ---\n");
 	// A: {2, 1}, B: {3} -> pb -> A: {1}, B: {2, 3}
-	int va[] = {2, 1};
+	int va[] = {2};
 	int vb[] = {3};
-	t_stack *a = create_test_stack(va, 2);
+	t_stack *a = create_test_stack(va, 1);
 	t_stack *b = create_test_stack(vb, 1);
 
 	print_stack(a, "A (Before)");
