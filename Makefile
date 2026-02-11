@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+         #
+#    By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2026/02/11 00:05:33 by nilsdruon        ###   ########.fr        #
+#    Updated: 2026/02/11 20:46:50 by nildruon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OFILES = $(CFILES:.c=.o)
 
 NAME = push_swap
 
-HEADER = pushswap.h
+HEADER = push_swap.h
 
 LIBFT = libft_lib
 LIBFT_A = $(LIBFT)/libft.a
@@ -37,8 +37,8 @@ REMOVE = rm -f
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	@make -C $(LIBFT)
-	@$(CC) $(CFLAGS) $(OFILES) $(LIBFT_A) -o $(NAME)
+	make -C $(LIBFT)
+	$(CC) $(CFLAGS) $(OFILES) $(LIBFT_A) -o $(NAME)
 
 fclean: clean
 	$(REMOVE) $(NAME)

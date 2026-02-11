@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:37 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/10 23:32:59 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/11 18:13:05 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void sa(t_stack **a)
 		(*a)->prev = tmp;
 		*a = tmp;
 	}
+	write(1, "sa\n", 3);
 }
 
 void sb(t_stack **b)
@@ -56,11 +57,13 @@ void sb(t_stack **b)
 		(*b)->prev = tmp;
 		*b = tmp;
 	}
+	write(1, "sb\n", 3);
 }
 void ss(t_stack **a, t_stack **b)
 {
 	sa(a);
 	sb(b);
+	write(1, "ss\n", 3);
 }
 
 void pa(t_stack **a, t_stack **b)
@@ -89,6 +92,7 @@ void pa(t_stack **a, t_stack **b)
 		(*a)->prev = tmp;
 		*a = (*a)->prev;
 	}
+	write(1, "pa\n", 3);
 }
 void pb(t_stack **a, t_stack **b)
 {
@@ -116,4 +120,5 @@ void pb(t_stack **a, t_stack **b)
 		(*b)->prev = tmp;
 		*b = (*b)->prev;
 	}
+	write(1, "pb\n", 3);
 }

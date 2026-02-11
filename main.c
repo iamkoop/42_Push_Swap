@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/10 01:17:38 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/12 00:10:37 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,22 @@ static t_stack *create_initial_stack_from_args(char **input)
 	return (create_initial_stack(input_arr));
 }
 
+void sort(int argc, t_stack **a, t_stack **b)
+{
+	if(argc == 2)
+		return;
+	else if(argc == 3)
+		sa(a);
+	else if(argc == 4)
+		sort_3(a);
+	else if(argc == 5)
+		sort_4(a,b);
+	else if(argc == 6)
+		sort_5(a,b);
+	else if(argc > 6)
+		return;
+}
+
 int main(int argc, char **argv)
 {
 	t_stacks *stacks;
@@ -86,10 +102,15 @@ int main(int argc, char **argv)
 		return (0);
 
 	stacks->stack_a = create_initial_stack_from_args(argv);
-
+	stacks->stack_b = NULL;
 	if (!stacks->stack_a)
 		return (0);
-	print_stack(stacks->stack_a);
+	//print_stack(stacks->stack_a);
+	//printf("\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
+	sort(argc,&stacks->stack_a ,&stacks->stack_b);
+	//sort_5(&stacks->stack_a,&stacks->stack_b);
+	//printf(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
+	//print_stack(stacks->stack_a);
 	free(stacks);
 	return (1);
 }
