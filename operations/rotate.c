@@ -3,26 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:41 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/04 15:07:06 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/11 00:04:00 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/* void ra()
+void ra(t_stack **a)
 {
-	
+	if (!a || !*a || (*a)->next == (*a))
+		return;
+	*a = (*a)->next;
 }
 
-void rb()
+void rb(t_stack **b)
 {
-	
+	if (!b || !*b || (*b)->next == (*b))
+		return;
+	*b = (*b)->next;
 }
 
-void rr()
+void rr(t_stack **a, t_stack **b)
 {
-	
-} */
+	ra(a);
+	rb(b);
+}

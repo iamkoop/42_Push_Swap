@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:37 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/10 21:03:01 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/10 23:32:59 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void sa(t_stack **a)
 {
 	t_stack *tmp;
 
-	if (!a || (*a)->next == (*a))
+	if (!a || !*a || (*a)->next == (*a))
 		return;
 	if ((*a)->next->next == *a)
 	{
@@ -39,7 +39,7 @@ void sb(t_stack **b)
 {
 	t_stack *tmp;
 
-	if (!b || (*b)->next == (*b))
+	if (!b || !*b || (*b)->next == (*b))
 		return;
 	if ((*b)->next->next == *b)
 	{

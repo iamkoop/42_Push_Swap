@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_swap.c                                        :+:      :+:    :+:   */
+/*   test_reverse_rotate.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antigravity                                  +#+  +:+       +#+ */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 23:35:00 by antigravity       #+#    #+#             */
-/*   Updated: 2026/02/10 01:00:00 by antigravity      ###   ########.fr       */
+/*   Created: 2026/02/10 23:10:00 by antigravity       #+#    #+#             */
+/*   Updated: 2026/02/10 23:10:00 by antigravity      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft_lib/libft.h"
 #include "../push_swap.h"
 
-// Prototypes for swap operations
-void sa(t_stack **a);
-void sb(t_stack **b);
-void ss(t_stack **a, t_stack **b);
-void pa(t_stack **a, t_stack **b);
-void pb(t_stack **a, t_stack **b);
+// Prototypes for reverse rotate operations
+void rra(t_stack **a);
+void rrb(t_stack **b);
+void rrr(t_stack **a, t_stack **b);
 
 t_stack *create_test_stack(int *values, int count)
 {
@@ -60,14 +58,6 @@ void print_stack(t_stack *stack, char *name)
 	ft_printf("\n");
 }
 
-/*
-   We using ft_lstclear but we need to be careful with circular lists.
-   The project's stack is circular. ft_lstclear usually expects NULL
-   termination. However, since we are just testing, let's break the circle
-   before clearing if needed, or just write a simple clear for circular.
-   Actually, let's just use a simple manual text clear to avoid issues if
-   ft_lstclear isn't adapted.
-*/
 void clear_test_stack(t_stack **stack)
 {
 	t_stack *curr;
@@ -88,59 +78,43 @@ void clear_test_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void test_sa(void)
+void test_rra(void)
 {
-	ft_printf("\n--- Testing sa ---\n");
-	int vals[] = {2, 1};
-	t_stack *a = create_test_stack(vals, 2);
+	ft_printf("\n--- Testing rra ---\n");
+	// A: {1, 2, 3} -> rra -> A: {3, 1, 2}
+	int vals[] = {1, 2, 3};
+	t_stack *a = create_test_stack(vals, 3);
 	print_stack(a, "A (Before)");
-	sa(&a);
+	rra(&a);
 	print_stack(a, "A (After )");
 	clear_test_stack(&a);
 }
 
-void test_sb(void)
+void test_rrb(void)
 {
-	ft_printf("\n--- Testing sb ---\n");
-	int vals[] = {2, 1};
-	t_stack *b = create_test_stack(vals, 2);
+	ft_printf("\n--- Testing rrb ---\n");
+	// B: {1, 2, 3} -> rrb -> B: {3, 1, 2}
+	int vals[] = {1, 2, 3};
+	t_stack *b = create_test_stack(vals, 3);
 	print_stack(b, "B (Before)");
-	sb(&b);
+	rrb(&b);
 	print_stack(b, "B (After )");
 	clear_test_stack(&b);
 }
 
-void test_ss(void)
+void test_rrr(void)
 {
-	ft_printf("\n--- Testing ss ---\n");
-	int va[] = {2, 1};
-	int vb[] = {4, 3};
+	ft_printf("\n--- Testing rrr ---\n");
+	// A: {1, 2}, B: {3, 4} -> rrr -> A: {2, 1}, B: {4, 3}
+	int va[] = {1, 2};
+	int vb[] = {3, 4};
 	t_stack *a = create_test_stack(va, 2);
 	t_stack *b = create_test_stack(vb, 2);
 
 	print_stack(a, "A (Before)");
 	print_stack(b, "B (Before)");
-	ss(&a, &b);
-	print_stack(a, "A (After )");
-	print_stack(b, "B (After )");
 
-	clear_test_stack(&a);
-	clear_test_stack(&b);
-}
-
-void test_pa(void)
-{
-	ft_printf("\n--- Testing pa ---\n");
-	// A: {3}, B: {2, 1} -> pa -> A: {2, 3}, B: {1}
-	int va[] = {3};
-	int vb[] = {2};
-	t_stack *a = create_test_stack(va, 1);
-	t_stack *b = create_test_stack(vb, 1);
-
-	print_stack(a, "A (Before)");
-	print_stack(b, "B (Before)");
-
-	pa(&a, &b);
+	rrr(&a, &b);
 
 	print_stack(a, "A (After )");
 	print_stack(b, "B (After )");
@@ -149,76 +123,53 @@ void test_pa(void)
 	clear_test_stack(&b);
 }
 
-void test_pb(void)
+void test_rra_edge_cases(void)
 {
-	ft_printf("\n--- Testing pb ---\n");
-	// A: {2, 1}, B: {3} -> pb -> A: {1}, B: {2, 3}
-	int va[] = {2};
-	int vb[] = {3};
-	t_stack *a = create_test_stack(va, 1);
-	t_stack *b = create_test_stack(vb, 1);
-
-	print_stack(a, "A (Before)");
-	print_stack(b, "B (Before)");
-
-	pb(&a, &b);
-
-	print_stack(a, "A (After )");
-	print_stack(b, "B (After )");
-
-	clear_test_stack(&a);
-	clear_test_stack(&b);
-}
-
-void test_sa_edge_cases(void)
-{
-	ft_printf("\n--- Testing sa edge cases ---\n");
+	ft_printf("\n--- Testing rra edge cases ---\n");
 	t_stack *a = NULL;
-	sa(&a);
+	rra(&a);
 	print_stack(a, "A (Empty)");
 
 	int vals[] = {1};
 	a = create_test_stack(vals, 1);
 	print_stack(a, "A (1 elem)");
-	sa(&a);
+	rra(&a);
 	print_stack(a, "A (After)");
 	clear_test_stack(&a);
 }
 
-void test_sb_edge_cases(void)
+void test_rrb_edge_cases(void)
 {
-	ft_printf("\n--- Testing sb edge cases ---\n");
+	ft_printf("\n--- Testing rrb edge cases ---\n");
 	t_stack *b = NULL;
-	sb(&b);
+	rrb(&b);
 	print_stack(b, "B (Empty)");
 
 	int vals[] = {1};
 	b = create_test_stack(vals, 1);
 	print_stack(b, "B (1 elem)");
-	sb(&b);
+	rrb(&b);
 	print_stack(b, "B (After)");
 	clear_test_stack(&b);
 }
 
-void test_ss_edge_cases(void)
+void test_rrr_edge_cases(void)
 {
-	ft_printf("\n--- Testing ss edge cases ---\n");
+	ft_printf("\n--- Testing rrr edge cases ---\n");
 	t_stack *a = NULL;
 	t_stack *b = NULL;
-	ss(&a, &b);
+	rrr(&a, &b);
 	print_stack(a, "A (Empty)");
 	print_stack(b, "B (Empty)");
 }
 
 int main(void)
 {
-	test_sa();
-	test_sb();
-	test_ss();
-	test_pa();
-	test_pb();
-	test_sa_edge_cases();
-	test_sb_edge_cases();
-	test_ss_edge_cases();
+	test_rra();
+	test_rrb();
+	test_rrr();
+	test_rra_edge_cases();
+	test_rrb_edge_cases();
+	test_rrr_edge_cases();
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2026/02/10 00:09:08 by nilsdruon        ###   ########.fr        #
+#    Updated: 2026/02/11 00:05:33 by nilsdruon        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Werror -Wall -Wextra -g -Ilibft
 
 CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c \
 input_check.c input_conversion.c input_sort.c initial_stack_creation.c\
-main.c
+sort.c main.c
 
 OFILES = $(CFILES:.c=.o)
 
