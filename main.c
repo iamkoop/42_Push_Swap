@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/12 00:10:37 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/13 17:46:37 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void sort(int argc, t_stack **a, t_stack **b)
 	else if(argc == 6)
 		sort_5(a,b);
 	else if(argc > 6)
-		return;
+		sort_turk(a,b);
 }
 
 int main(int argc, char **argv)
@@ -105,12 +105,7 @@ int main(int argc, char **argv)
 	stacks->stack_b = NULL;
 	if (!stacks->stack_a)
 		return (0);
-	//print_stack(stacks->stack_a);
-	//printf("\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
 	sort(argc,&stacks->stack_a ,&stacks->stack_b);
-	//sort_5(&stacks->stack_a,&stacks->stack_b);
-	//printf(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
-	//print_stack(stacks->stack_a);
 	free(stacks);
 	return (1);
 }

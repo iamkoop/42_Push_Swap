@@ -11,7 +11,9 @@
 				"367",
 				"-23",
 				"3",
-				"6"
+				"6",
+				"49",
+				"59"
 			],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",

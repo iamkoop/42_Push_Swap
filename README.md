@@ -6,110 +6,22 @@
 
 Todo's:
 input check ✅
-create stack:
--> convert to int array ✅
--> store the sorted array in an extra int array
--> create stack. find location of in the sorted array of the int and write the right index directly
+create stack ✅
+sorting:
+1-5 ✅
 
-write operations:
+turk algo:
 
-write a plan
+Push everything to b except 3 numbers
+find lowest amount of operation in the current constellation
+-> if there is no number between the current num and next go to next num
+	->see if there is a num betwween the current abd the next. smallest of those.
+	-
+-> when the best move is found save node in b that needs to be behind node a
+-> after every succesful push to a reindex both a and b
 
-include and test the checker
-antigravity
-pdf into the project (doc/folder)
+Go through each num is A.
+Find the nearest num in b that betwee
 
-
-------------------------------------
-
-<!--void test_sa()
-{
-	t_stack *head;
-    t_stack *new = ft_lstnew((int)3);
-    t_stack *new2 = ft_lstnew((int)2);
-    t_stack *new3 = ft_lstnew((int)5);
-    t_stack *newtest;
-    head=new;
-    new->next=new2;
-    new2->next=new3;
-	new3->next=NULL;
-    newtest = head;  
-    while (newtest)
-    {
-        printf("%d\n", (int)newtest->data);
-        newtest=newtest->next;
-    }
-    printf("\n-------------------------------------------\n");
-	sb(&head);
-	newtest = head;
-    while (newtest)
-    {
-        printf("%d\n", (int)newtest->data);
-        newtest=newtest->next;
-    }
-}
-
-/*
-
-
-#include <stdio.h>
-int main()
-{
-    t_stack *head;
-    t_stack *new = ft_lstnew((int)3);
-    t_stack *new2 = ft_lstnew((int)2);
-    t_stack *new3 = ft_lstnew((int)5);
-    t_stack *newtest;
-    head=new;
-    new->next=new2;
-    new2->next=new3;
-	new3->next=NULL;
-    newtest = head;  
-    while (newtest)
-    {
-        printf("%d\n", (int)newtest->data);
-        newtest=newtest->next;
-    }
-    printf("\n-------------------------------------------\n");
-	sb(&head);
-	newtest = head;
-    while (newtest)
-    {
-        printf("%d\n", (int)newtest->data);
-        newtest=newtest->next;
-    }
-    return(0);
-}
-
-#include <stdio.h>
-int main()
-{
-    t_stack *head_a;
-    t_stack *new_a = ft_lstnew((int)3);
-    t_stack *new2_a = ft_lstnew((int)2);
-    t_stack *new3_a = ft_lstnew((int)5);
-    t_stack *newtest_a;
-//-------------------------------------------------------------------------------
-    head_a=new_a;
-    new_a->next = new2_a;
-    new2_a->next = new3_a;
-	new3_a->next=NULL;
-    newtest_a = head_a;
-//-------------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------
-    while (newtest)
-    {
-        printf("%d\n", (int)newtest->data);
-        newtest=newtest->next;
-    }
-    printf("\n-------------------------------------------\n");
-	sb(&head);
-	newtest = head;
-    while (newtest)
-    {
-        printf("%d\n", (int)newtest->data);
-        newtest=newtest->next;
-    }
-    return(0);
-} */-->
+Helper func:
+func that index the current spots ✅

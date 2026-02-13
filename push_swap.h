@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/12 00:10:22 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/13 17:01:44 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,20 @@ typedef struct s_arr
 	int count;
 } t_arr;
 
+typedef struct s_curr_optimal_push
+{
+	int position_a;
+	int position_b;
+	int moves;
+} t_curr_optimal_push;
+
 int input_is_valid(char **input);
 int **unsorted_and_sorted(t_arr *arr);
 t_arr *convert_input_to_i_arr(char **input);
 t_stack *create_initial_stack(t_arr *input_arr);
 int *sorted_arr(int *arr, int size);
 t_stack *ps_lstnew(int content, int index);
+void sort_turk(t_stack **a,t_stack **b);
 void sa(t_stack **a);
 void sb(t_stack **b);
 void ss(t_stack **a, t_stack **b);
