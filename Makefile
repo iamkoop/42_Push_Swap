@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+         #
+#    By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2026/02/13 17:02:46 by nildruon         ###   ########.fr        #
+#    Updated: 2026/02/15 23:09:01 by nilsdruon        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Werror -Wall -Wextra -g -Ilibft
 
 CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c \
 input_check.c input_conversion.c input_sort.c initial_stack_creation.c turk_algo.c\
-sort.c main.c
+sort.c turk_help.c turk_cost_to_top.c main.c
 
 OFILES = $(CFILES:.c=.o)
 

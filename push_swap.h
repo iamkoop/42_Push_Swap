@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/13 17:01:44 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/16 00:11:26 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,17 @@ typedef struct s_arr
 	int count;
 } t_arr;
 
-typedef struct s_curr_optimal_push
+typedef struct s_optimal_p
 {
 	int position_a;
 	int position_b;
+	int curr_position_a;
+	int curr_position_b;
+	int a_direction;
+	int b_direction;
 	int moves;
-} t_curr_optimal_push;
+	int print;
+} t_optimal_p;
 
 int input_is_valid(char **input);
 int **unsorted_and_sorted(t_arr *arr);
@@ -37,7 +42,7 @@ t_arr *convert_input_to_i_arr(char **input);
 t_stack *create_initial_stack(t_arr *input_arr);
 int *sorted_arr(int *arr, int size);
 t_stack *ps_lstnew(int content, int index);
-void sort_turk(t_stack **a,t_stack **b);
+void sort_turk(t_stack **a, t_stack **b);
 void sa(t_stack **a);
 void sb(t_stack **b);
 void ss(t_stack **a, t_stack **b);
@@ -52,5 +57,7 @@ void rrr(t_stack **a, t_stack **b);
 void sort_3(t_stack **s);
 void sort_4(t_stack **a, t_stack **b);
 void sort_5(t_stack **a, t_stack **b);
+void find_smallest_op_and_exec(t_stack **a, t_stack **b);
+int ft_cttp(int max_a, int max_b, t_optimal_p **ctt);
 
 #endif

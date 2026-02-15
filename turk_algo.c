@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   turk_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 16:59:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/13 22:02:46 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/15 16:19:07 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,23 +57,23 @@ static void index_a_b(t_stack **a, t_stack **b)
 
 	i = 0;
 	stack = *a;
-	stack->curr_index = i;
+	stack->curr_i = i;
 	stack = stack->next;
 	i++;
-	while(stack != *a)
+	while (stack != *a)
 	{
-		stack->curr_index = i++;
+		stack->curr_i = i++;
 		stack = stack->next;
 	}
-	if(!b || !*b)
-		return ;
+	if (!b || !*b)
+		return;
 	stack = *b;
 	i = 0;
-	stack->curr_index = i++;
+	stack->curr_i = i++;
 	stack = stack->next;
-	while(stack != *b)
+	while (stack != *b)
 	{
-		stack->curr_index = i++;
+		stack->curr_i = i++;
 		stack = stack->next;
 	}
 }
@@ -82,47 +82,27 @@ static void initial_push_to_b(t_stack **a, t_stack **b)
 {
 	t_stack *stack;
 	int i;
-	
+
 	stack = *a;
-	i = stack->prev->curr_index;
-	while(i > 2)
+	i = stack->prev->curr_i;
+	while (i > 2)
 	{
-		pb(a,b);
+		pb(a, b);
 		i--;
 	}
 	sort_3(a);
 }
 
-/*static int cost_to_top(t_stack **a,t_stack **b, int index_a, int index_b)
-{
-	return(0);
-}*/
 
-//must be between current num and next (most cost efficient out of those)
-/*void find_smallest_op(t_stack **a,t_stack **b)
-{
-	t_stack *stack_a;
-	t_stack *stack_b;
-	int cost_to_top;
 
-	stack_a = *a;
-	stack_b = *b
-	
-	while(stack_a->next)
+void sort_turk(t_stack **a, t_stack **b)
+{
+	index_a_b(a, b);
+	initial_push_to_b(a, b);
+	index_a_b(a, b);
+	while (*b)
 	{
-		while(stack_b->next)
-		{
-			if(stack_b->cur_index)
-			stack_a = stack->next;
-		}
-		stack_a = stack->next;
+		find_smallest_op_and_exec(a, b);
+		index_a_b(a, b);
 	}
-}*/
-
-void sort_turk(t_stack **a,t_stack **b)
-{
-	index_a_b(a, b);
-	initial_push_to_b(a,b);
-	index_a_b(a, b);
-	
 }

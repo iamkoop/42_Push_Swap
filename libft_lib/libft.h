@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:21:27 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/13 17:21:38 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/15 15:48:48 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_stack
 {
 	int data;
 	int index;
-	int curr_index;
+	int curr_i;
 	struct s_stack *next;
 	struct s_stack *prev;
 } t_stack;
