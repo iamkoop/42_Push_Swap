@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 00:05:35 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/15 23:03:36 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/16 19:00:04 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void sort_4(t_stack **a, t_stack **b)
 		while (4 - cost_to_top-- > 0)
 			rra(a);
 	}
+	pb(a,b);
 	sort_3(a);
 	pa(a, b);
 }

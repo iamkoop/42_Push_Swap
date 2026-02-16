@@ -3,66 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   turk_help.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 16:18:34 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/16 00:12:08 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/16 22:33:01 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-// sso: save smallest operation
-static void sso(t_stack *a, t_stack *b, t_optimal_p **cttop, int new_ctt)
+static void save_new_cttp(int curr_a, int curr_b, int cttp, t_o_p **smlst_m_n)
 {
-	(*cttop)->position_a = a->curr_i;
-	(*cttop)->position_b = b->curr_i;
-	(*cttop)->moves = new_ctt;
+	(*smlst_m_n)->location_a = curr_a;
+	(*smlst_m_n)->location_b = curr_b;
+	(*smlst_m_n)->total_cost = cttp;
 }
 
-/*static void execute_moves()
+static void f_s_op_help(t_stack *a, t_stack **b, int max_a, t_o_p **smlst_m_n)
 {
-}*/
+	t_stack *curr_b;
+	int cttp;
 
-// must be between current num and next (most cost efficient out of those)
-static void find_smallest_op(t_stack **a, t_stack **b, t_optimal_p **ctt)
-{
-	t_stack *s_a;
-	t_stack *s_b;
-	int new_ctt;
-
-	s_a = *a;
-	s_b = *b;
-
-	while (s_a->curr_i <= (*a)->prev->curr_i)
+	curr_b = *b;
+	while (1)
 	{
-		while (s_b->curr_i <= (*b)->prev->curr_i)
-		{
-			if (s_b->curr_i < s_a->curr_i && s_b->curr_i < s_a->next->curr_i)
-			{
-				(*ctt)->curr_position_a = s_a->curr_i;
-				(*ctt)->curr_position_b = s_b->curr_i;
-				new_ctt = ft_cttp((*a)->prev->curr_i, (*b)->prev->curr_i, ctt);
-				if (new_ctt < (*ctt)->moves)
-					sso(s_a, s_b, ctt, new_ctt);
-			}
-			s_b = s_b->next;
-		}
-		s_a = s_a->next;
+		cttp = ft_cttp(max_a, (*b)->prev->curr_i, a->curr_i, curr_b->curr_i);
+		if (cttp < (*smlst_m_n)->total_cost)
+			save_new_cttp(a->curr_i, curr_b->curr_i, cttp, smlst_m_n);
+		curr_b = curr_b->next;
+		if (curr_b == *b)
+			break;
+	}
+}
+
+static void find_smllst_op(t_stack **a, t_stack **b, t_o_p **smlst_m_n)
+{
+	t_stack *curr_a;
+
+	curr_a = *a;
+	while (1)
+	{
+		f_s_op_help(curr_a, b, (*a)->prev->curr_i, smlst_m_n);
+		curr_a = curr_a->next;
+		if (curr_a == *a)
+			break;
 	}
 }
 
 void find_smallest_op_and_exec(t_stack **a, t_stack **b)
 {
-	t_optimal_p *least_num_of_moves;
+	t_o_p *least_num_of_moves;
 
-	least_num_of_moves = malloc(sizeof(t_optimal_p));
+	least_num_of_moves = malloc(sizeof(t_o_p));
 	if (!least_num_of_moves)
 	{
 		write(2, "Error\n", 6);
 		return;
 	}
-	least_num_of_moves->moves = 2147483647;
-	find_smallest_op(a, b, &least_num_of_moves);
+	least_num_of_moves->total_cost = 2147483647;
+	least_num_of_moves->location_a = 2147483647;
+	least_num_of_moves->location_b = 2147483647;
+	find_smllst_op(a, b, &least_num_of_moves);
 }

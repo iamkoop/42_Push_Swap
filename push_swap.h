@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/16 00:11:26 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/16 22:09:41 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,13 @@ typedef struct s_arr
 	int count;
 } t_arr;
 
-typedef struct s_optimal_p
+// optimal push
+typedef struct s_o_p
 {
-	int position_a;
-	int position_b;
-	int curr_position_a;
-	int curr_position_b;
-	int a_direction;
-	int b_direction;
-	int moves;
-	int print;
-} t_optimal_p;
+	int location_a;
+	int location_b;
+	int total_cost;
+} t_o_p;
 
 int input_is_valid(char **input);
 int **unsorted_and_sorted(t_arr *arr);
@@ -58,6 +54,6 @@ void sort_3(t_stack **s);
 void sort_4(t_stack **a, t_stack **b);
 void sort_5(t_stack **a, t_stack **b);
 void find_smallest_op_and_exec(t_stack **a, t_stack **b);
-int ft_cttp(int max_a, int max_b, t_optimal_p **ctt);
+int ft_cttp(int max_a, int max_b, int current_a, int current_b);
 
 #endif

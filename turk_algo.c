@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   turk_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 16:59:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/15 16:19:07 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/16 21:37:03 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@
 		   "----------\n");
 	printf("Node %d\n", cnt);
 	printf("data       :%d\n", stack->data);
-	printf("curr index :%d\n", stack->curr_index);
-	printf("prev index :%d\n", stack->prev->curr_index);
-	printf("next index :%d\n", stack->next->curr_index);
+	printf("curr index :%d\n", stack->curr_i);
+	printf("sorted index :%d\n", stack->index);
+	printf("prev index :%d\n", stack->prev->curr_i);
+	printf("next index :%d\n", stack->next->curr_i);
 	printf("-------------------------------------------------------------------"
 		   "----------\n");
 	stack = stack->next;
@@ -40,9 +41,10 @@
 			   "--------------\n");
 		printf("Node %d\n", cnt);
 		printf("data       :%d\n", stack->data);
-		printf("curr index :%d\n", stack->curr_index);
-		printf("prev index :%d\n", stack->prev->curr_index);
-		printf("next index :%d\n", stack->next->curr_index);
+		printf("sorted index :%d\n", stack->index);
+		printf("curr index :%d\n", stack->curr_i);
+		printf("prev index :%d\n", stack->prev->curr_i);
+		printf("next index :%d\n", stack->next->curr_i);
 		printf("---------------------------------------------------------------"
 			   "--------------\n");
 		stack = stack->next;
@@ -78,17 +80,26 @@ static void index_a_b(t_stack **a, t_stack **b)
 	}
 }
 
-static void initial_push_to_b(t_stack **a, t_stack **b)
+static void initial_push_to_b(t_stack **a, t_stack **b, int max)
 {
-	t_stack *stack;
-	int i;
+	int len;
+	int middle;
 
-	stack = *a;
-	i = stack->prev->curr_i;
-	while (i > 2)
+	middle = max/2;
+	len = (*a)->prev->curr_i;
+
+	while((*a)->index > middle)
+		ra(a);
+	while (len > 2)
 	{
-		pb(a, b);
-		i--;
+		if((*a)->index <= middle)
+			pb(a,b);
+		else
+		{
+			pb(a, b);
+			rb(b);
+		}
+		len--;
 	}
 	sort_3(a);
 }
@@ -97,8 +108,21 @@ static void initial_push_to_b(t_stack **a, t_stack **b)
 
 void sort_turk(t_stack **a, t_stack **b)
 {
+	int max;
+	t_stack *s;
+	
 	index_a_b(a, b);
-	initial_push_to_b(a, b);
+	s = *a;
+	max = 0;
+	while(1)
+	{
+		if(s->index > max)
+			max = s->index;
+		s = s->next;
+		if(s == *a)
+			break;
+	}
+	initial_push_to_b(a, b, max);
 	index_a_b(a, b);
 	while (*b)
 	{
