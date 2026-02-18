@@ -25,3 +25,7 @@ Find the nearest num in b that betwee
 
 Helper func:
 func that index the current spots ✅
+
+Extra:
+if its cheaper to go both in one direction do it
+or if one is in the middle

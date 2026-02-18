@@ -6,22 +6,22 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 16:59:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/16 21:37:03 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/18 15:48:37 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*static void print_stack_i(t_stack *stack, char c)
+static void print_stack_i(t_stack *stack, char c)
 {
 	t_stack *s = stack;
 	if (!stack)
 		return;
 	int cnt = 0;
 
-	if(c == 'a')
+	if (c == 'a')
 		printf("Stack A\n");
-	if(c == 'b')
+	if (c == 'b')
 		printf("Stack B\n");
 	printf("-------------------------------------------------------------------"
 		   "----------\n");
@@ -50,7 +50,7 @@
 		stack = stack->next;
 		cnt++;
 	}
-}*/
+}
 
 static void index_a_b(t_stack **a, t_stack **b)
 {
@@ -85,15 +85,15 @@ static void initial_push_to_b(t_stack **a, t_stack **b, int max)
 	int len;
 	int middle;
 
-	middle = max/2;
+	middle = max / 2;
 	len = (*a)->prev->curr_i;
 
-	while((*a)->index > middle)
+	while ((*a)->index > middle)
 		ra(a);
 	while (len > 2)
 	{
-		if((*a)->index <= middle)
-			pb(a,b);
+		if ((*a)->index <= middle)
+			pb(a, b);
 		else
 		{
 			pb(a, b);
@@ -104,26 +104,26 @@ static void initial_push_to_b(t_stack **a, t_stack **b, int max)
 	sort_3(a);
 }
 
-
-
 void sort_turk(t_stack **a, t_stack **b)
 {
 	int max;
 	t_stack *s;
-	
+
 	index_a_b(a, b);
 	s = *a;
 	max = 0;
-	while(1)
+	while (1)
 	{
-		if(s->index > max)
+		if (s->index > max)
 			max = s->index;
 		s = s->next;
-		if(s == *a)
+		if (s == *a)
 			break;
 	}
 	initial_push_to_b(a, b, max);
 	index_a_b(a, b);
+	print_stack_i(*a, 'a');
+	print_stack_i(*b, 'b');
 	while (*b)
 	{
 		find_smallest_op_and_exec(a, b);

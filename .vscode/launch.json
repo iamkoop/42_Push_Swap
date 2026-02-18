@@ -7,14 +7,13 @@
 			"request": "launch",
 			"program": "${workspaceFolder}/push_swap",
 			"args": [
-				"11111111",
-				"1",
+				"60",
+				"5123",
+				"32",
 				"3",
-				"22222222",
-				"4",
-				"68",
-				"69",
-				"80"
+				"1",
+				"5",
+				"95"
 			],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
@@ -35,6 +34,19 @@
 			"externalConsole": false,
 			"MIMode": "gdb",
 			"preLaunchTask": "build_test_swap"
+		},
+		{
+			"name": "Debug Active File",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}/${fileBasenameNoExtension}",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "compile_active_file"
 		}
 	]
 }

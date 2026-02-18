@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 16:18:34 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/16 22:33:01 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/18 20:42:28 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void save_new_cttp(int curr_a, int curr_b, int cttp, t_o_p **smlst_m_n)
 static void f_s_op_help(t_stack *a, t_stack **b, int max_a, t_o_p **smlst_m_n)
 {
 	t_stack *curr_b;
+	// int stack_a[2];
 	int cttp;
 
 	curr_b = *b;
@@ -50,6 +51,10 @@ static void find_smllst_op(t_stack **a, t_stack **b, t_o_p **smlst_m_n)
 	}
 }
 
+/*static void exec_op(t_stack **a, t_stack **b, t_o_p *least_num_of_moves)
+{
+}*/
+
 void find_smallest_op_and_exec(t_stack **a, t_stack **b)
 {
 	t_o_p *least_num_of_moves;
@@ -64,4 +69,5 @@ void find_smallest_op_and_exec(t_stack **a, t_stack **b)
 	least_num_of_moves->location_a = 2147483647;
 	least_num_of_moves->location_b = 2147483647;
 	find_smllst_op(a, b, &least_num_of_moves);
+	// exec_op();
 }
