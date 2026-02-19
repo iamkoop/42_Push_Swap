@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/16 22:09:41 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/18 23:07:23 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ typedef struct s_arr
 // optimal push
 typedef struct s_o_p
 {
-	int location_a;
-	int location_b;
+	int loc_a;
+	int loc_b;
 	int total_cost;
 } t_o_p;
 

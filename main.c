@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/13 17:46:37 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/19 02:00:21 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,18 @@ static t_stack *create_initial_stack_from_args(char **input)
 
 void sort(int argc, t_stack **a, t_stack **b)
 {
-	if(argc == 2)
+	if (argc == 2)
 		return;
-	else if(argc == 3)
+	else if (argc == 3)
 		sa(a);
-	else if(argc == 4)
+	else if (argc == 4)
 		sort_3(a);
-	else if(argc == 5)
-		sort_4(a,b);
-	else if(argc == 6)
-		sort_5(a,b);
-	else if(argc > 6)
-		sort_turk(a,b);
+	else if (argc == 5)
+		sort_4(a, b);
+	else if (argc == 6)
+		sort_5(a, b);
+	else if (argc > 6)
+		sort_turk(a, b);
 }
 
 int main(int argc, char **argv)
@@ -105,7 +105,7 @@ int main(int argc, char **argv)
 	stacks->stack_b = NULL;
 	if (!stacks->stack_a)
 		return (0);
-	sort(argc,&stacks->stack_a ,&stacks->stack_b);
+	sort(argc, &stacks->stack_a, &stacks->stack_b);
 	free(stacks);
 	return (1);
 }

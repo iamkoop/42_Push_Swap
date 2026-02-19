@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:14:03 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/11 21:10:44 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/19 02:10:20 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,15 @@ static int duplicates(char **input, int ret)
 
 	if (!ret)
 		return (0);
-	i = 0;
+	i = 1;
 	while (input[i])
 	{
 		num_to_cmp_with = ft_atoi(input[i]);
-		k = 0;
+		k = 1;
 		while (i > 0 && k < i)
 		{
 			curr_num = ft_atoi(input[k]);
-			if (curr_num == num_to_cmp_with)
+			if (i > 1 && curr_num == num_to_cmp_with)
 				return (0);
 			k++;
 		}

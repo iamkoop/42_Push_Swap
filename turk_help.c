@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 16:18:34 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/18 20:42:28 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/19 01:59:39 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static void save_new_cttp(int curr_a, int curr_b, int cttp, t_o_p **smlst_m_n)
 {
-	(*smlst_m_n)->location_a = curr_a;
-	(*smlst_m_n)->location_b = curr_b;
+	(*smlst_m_n)->loc_a = curr_a;
+	(*smlst_m_n)->loc_b = curr_b;
 	(*smlst_m_n)->total_cost = cttp;
 }
 
-static void f_s_op_help(t_stack *a, t_stack **b, int max_a, t_o_p **smlst_m_n)
+static void f_s_op_help(t_stack *a, t_stack **b, int m_a, t_o_p **smlst_m_n)
 {
 	t_stack *curr_b;
 	// int stack_a[2];
@@ -28,9 +28,13 @@ static void f_s_op_help(t_stack *a, t_stack **b, int max_a, t_o_p **smlst_m_n)
 	curr_b = *b;
 	while (1)
 	{
-		cttp = ft_cttp(max_a, (*b)->prev->curr_i, a->curr_i, curr_b->curr_i);
-		if (cttp < (*smlst_m_n)->total_cost)
-			save_new_cttp(a->curr_i, curr_b->curr_i, cttp, smlst_m_n);
+		if (curr_b->index < a->index ||
+			(a->next->index == 0 && a->index < curr_b->index))
+		{
+			cttp = ft_cttp(m_a, (*b)->prev->curr_i, a->curr_i, curr_b->curr_i);
+			if (cttp < (*smlst_m_n)->total_cost)
+				save_new_cttp(a->curr_i, curr_b->curr_i, cttp, smlst_m_n);
+		}
 		curr_b = curr_b->next;
 		if (curr_b == *b)
 			break;
@@ -51,9 +55,47 @@ static void find_smllst_op(t_stack **a, t_stack **b, t_o_p **smlst_m_n)
 	}
 }
 
-/*static void exec_op(t_stack **a, t_stack **b, t_o_p *least_num_of_moves)
+static void exec_op(t_stack **a, t_stack **b, t_o_p *l_move_num)
 {
-}*/
+	int max_a;
+	int max_b;
+
+	max_a = (*a)->prev->curr_i;
+	max_b = (*b)->prev->curr_i;
+	if (l_move_num->loc_a <= max_a / 2)
+	{
+		while (l_move_num->loc_a > 0)
+		{
+			ra(a);
+			l_move_num->loc_a--;
+		}
+	}
+	if (l_move_num->loc_a > max_a / 2)
+	{
+		while (l_move_num->loc_a <= max_a)
+		{
+			rra(a);
+			l_move_num->loc_a++;
+		}
+	}
+	if (l_move_num->loc_b <= max_b / 2)
+	{
+		while (l_move_num->loc_b > 0)
+		{
+			rb(b);
+			l_move_num->loc_b--;
+		}
+	}
+
+	if (l_move_num->loc_b > max_b / 2)
+	{
+		while (l_move_num->loc_b < max_b)
+		{
+			rrb(b);
+			l_move_num->loc_b++;
+		}
+	}
+}
 
 void find_smallest_op_and_exec(t_stack **a, t_stack **b)
 {
@@ -66,8 +108,11 @@ void find_smallest_op_and_exec(t_stack **a, t_stack **b)
 		return;
 	}
 	least_num_of_moves->total_cost = 2147483647;
-	least_num_of_moves->location_a = 2147483647;
-	least_num_of_moves->location_b = 2147483647;
+	least_num_of_moves->loc_a = 2147483647;
+	least_num_of_moves->loc_b = 2147483647;
 	find_smllst_op(a, b, &least_num_of_moves);
-	// exec_op();
+	if (least_num_of_moves->total_cost != 0)
+		exec_op(a, b, least_num_of_moves);
+	pa(a, b);
+	free(least_num_of_moves);
 }

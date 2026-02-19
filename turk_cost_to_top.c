@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 22:46:42 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/18 20:38:58 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/18 23:29:51 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static int ft_cttp_help_diff_direction(int a, int b, int *is_max)
 		return (a + (b * -1 + !is_max[1]));
 	return 2147483647;
 }
+
 static int is_it_max(int max, int curr)
 {
 	if (curr == max)
@@ -61,13 +62,15 @@ int ft_cttp(int max_a, int max_b, int curr_a, int curr_b)
 		curr_a = curr_a - max_a;
 	else if (is_max[0])
 		curr_a = -1;
-	if (curr_b > max_b / 2 && !is_max[1])
+	if (max_b == 0)
+		curr_b = 0;
+	else if (curr_b > max_b / 2 && !is_max[1])
 		curr_b = curr_b - max_b;
 	else if (is_max[1])
 		curr_b = -1;
 	if ((curr_a <= 0 && curr_b <= 0) || (curr_a >= 0 && curr_b >= 0))
 		return (ft_cttp_help_both_same_direction(curr_a, curr_b, is_max));
-	if ((curr_a <= 0 && curr_b >= 0) || (curr_a >= 0 && curr_b <= 0))
+	else
 		return (ft_cttp_help_diff_direction(curr_a, curr_b, is_max));
 	return (2147483647);
 }
