@@ -6,29 +6,31 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 10:43:19 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/20 02:44:04 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:40:31 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void rra(t_stack **a, int print)
+void	rra(t_stack **a, int print)
 {
 	if (!a || !*a || (*a)->next == (*a))
-		return;
+		return ;
 	*a = (*a)->prev;
 	if (print)
 		write(1, "rra\n", 4);
 }
-void rrb(t_stack **b, int print)
+
+void	rrb(t_stack **b, int print)
 {
 	if (!b || !*b || (*b)->next == (*b))
-		return;
+		return ;
 	*b = (*b)->prev;
 	if (print)
 		write(1, "rrb\n", 4);
 }
-void rrr(t_stack **a, t_stack **b)
+
+void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a, 0);
 	rrb(b, 0);

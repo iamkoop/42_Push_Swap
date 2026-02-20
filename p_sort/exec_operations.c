@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 01:12:36 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 05:15:49 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:56:56 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,22 +90,14 @@ static void move(t_stack **a, t_stack **b, int *a_data, int *b_data)
 
 void exec_op(t_stack **a, t_stack **b, t_o_p *l_move_num)
 {
-	int up_a;
-	int num_op_a;
-	int up_b;
-	int num_op_b;
+
 	int a_data[3];
 	int b_data[3];
 
 	a_data[0] = calc_max(a);
 	b_data[0] = calc_max(b);
-	up_a = calc_up_or_down(l_move_num->loc_a, a_data[0], &num_op_a);
-	up_b = calc_up_or_down(l_move_num->loc_b, b_data[0], &num_op_b);
-
-	a_data[1] = up_a;
-	a_data[2] = num_op_a;
-	b_data[1] = up_b;
-	b_data[2] = num_op_b;
+	a_data[1] = calc_up_or_down(l_move_num->loc_a, a_data[0], &a_data[2]);
+	b_data[1] = calc_up_or_down(l_move_num->loc_b, b_data[0], &b_data[2]);
 
 	move(a, b, a_data, b_data);
 }
