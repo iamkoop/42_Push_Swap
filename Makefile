@@ -6,16 +6,17 @@
 #    By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2026/02/20 01:12:31 by nilsdruon        ###   ########.fr        #
+#    Updated: 2026/02/20 05:25:59 by nilsdruon        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Werror -Wall -Wextra -g -Ilibft
+CFLAGS = -Werror -Wall -Wextra -g -Ilibft_lib
 
-CFILES = operations/reverse_rotate.c operations/rotate.c operations/swap.c \
-input_check.c input_conversion.c input_sort.c initial_stack_creation.c turk_algo.c\
-sort.c turk_help.c turk_cost_to_top.c exec_operations.c main.c
+CFILES = p_operations/reverse_rotate.c p_operations/rotate.c p_operations/swap.c \
+p_parsing/input_check.c p_parsing/input_conversion.c p_parsing/input_sort.c p_parsing/initial_stack_creation.c \
+p_sort/sort.c p_sort/turk_help.c p_sort/turk_algo.c p_sort/turk_cost_to_top.c p_sort/exec_operations.c p_sort/turk_sort_main.c \
+main.c
 
 OFILES = $(CFILES:.c=.o)
 

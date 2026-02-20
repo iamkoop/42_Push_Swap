@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:14:03 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/19 18:58:38 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:26:37 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int inputs(char **splitted, int ret)
 {

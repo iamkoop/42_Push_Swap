@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 01:12:36 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 02:46:38 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:15:49 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int calc_max(t_stack **s)
 {

@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 19:16:58 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/20 04:40:04 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:26:01 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int find_index(int num, int *arr, int size)
 {
@@ -42,14 +42,10 @@ static int fill_stack(int **arrs, t_stack *new, t_stack *first, int size)
 		new->prev = prev;
 		prev->next = new;
 		prev = new;
-		if (i == size - 1)
-			break;
-		else
-			new = new->next;
 		i++;
 	}
-	new->next = first;
-	first->prev = new;
+	prev->next = first;
+	first->prev = prev;
 	return (1);
 }
 
@@ -72,7 +68,7 @@ t_stack *create_initial_stack(t_arr *input_arr)
 	if (!stack)
 		return (NULL);
 	if (!fill_stack(arrs, new, new, input_arr->count))
-		return (free(arrs[0]), free(arrs[1]), free(arrs), free(new), NULL);
+		return (free(arrs[0]), free(arrs[1]), free(arrs), NULL);
 	free(arrs[0]);
 	free(arrs[1]);
 	free(arrs);

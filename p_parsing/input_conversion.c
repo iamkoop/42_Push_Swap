@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:23:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/20 04:43:17 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:26:24 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_arr *convert_input_to_i_arr(char **input)
 {

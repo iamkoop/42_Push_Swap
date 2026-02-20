@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 00:05:49 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/10 00:18:35 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:26:42 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void selection_sort(int *arr, int size)
 {

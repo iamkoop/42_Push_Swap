@@ -6,12 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 04:45:02 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:18:39 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 t_stacks *create_stacks()
 {
@@ -40,22 +39,6 @@ static t_stack *create_initial_stack_from_args(char **input)
 	return (stack);
 }
 
-void sort(int argc, t_stack **a, t_stack **b)
-{
-	if (argc == 2)
-		return;
-	else if (argc == 3)
-		sa(a, 1);
-	else if (argc == 4)
-		sort_3(a);
-	else if (argc == 5)
-		sort_4(a, b);
-	else if (argc == 6)
-		sort_5(a, b);
-	else if (argc > 6)
-		sort_turk(a, b);
-}
-
 int main(int argc, char **argv)
 {
 	t_stacks *stacks;
@@ -77,7 +60,7 @@ int main(int argc, char **argv)
 	stacks->stack_a = create_initial_stack_from_args(argv);
 	stacks->stack_b = NULL;
 	if (!stacks->stack_a)
-		return (0);
+		return (free(stacks), 0);
 	sort(argc, &stacks->stack_a, &stacks->stack_b);
 	ft_lstclear(&stacks->stack_a);
 	free(stacks);

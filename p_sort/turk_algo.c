@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 16:59:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/20 02:47:10 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:13:27 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /*static void print_stack_i(t_stack *stack, char c)
 {

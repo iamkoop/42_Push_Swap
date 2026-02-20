@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 16:18:34 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 03:27:11 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:13:21 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void save_new_cttp(int curr_a, int curr_b, int cttp, t_o_p **smlst_m_n)
 {

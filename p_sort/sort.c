@@ -6,11 +6,11 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 00:05:35 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 04:00:25 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 05:13:14 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void sort_3_help(t_stack **s, int op1, int op2)
 {
