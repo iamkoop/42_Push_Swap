@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:37 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/11 18:13:05 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/20 02:47:32 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void sa(t_stack **a)
+void sa(t_stack **a, int print)
 {
 	t_stack *tmp;
 
@@ -33,10 +33,11 @@ void sa(t_stack **a)
 		(*a)->prev = tmp;
 		*a = tmp;
 	}
-	write(1, "sa\n", 3);
+	if (print)
+		write(1, "sa\n", 3);
 }
 
-void sb(t_stack **b)
+void sb(t_stack **b, int print)
 {
 	t_stack *tmp;
 
@@ -57,12 +58,13 @@ void sb(t_stack **b)
 		(*b)->prev = tmp;
 		*b = tmp;
 	}
-	write(1, "sb\n", 3);
+	if (print)
+		write(1, "sb\n", 3);
 }
 void ss(t_stack **a, t_stack **b)
 {
-	sa(a);
-	sb(b);
+	sa(a, 0);
+	sb(b, 0);
 	write(1, "ss\n", 3);
 }
 

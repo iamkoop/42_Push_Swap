@@ -7,15 +7,12 @@
 			"request": "launch",
 			"program": "${workspaceFolder}/push_swap",
 			"args": [
-				"0",
-				"7",
-				"128",
-				"-15",
-				"93",
-				"256",
-				"-64",
-				"19",
-				"5"
+				"3",
+				"45321",
+				"23",
+				"94",
+				"51",
+				"0"
 			],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",

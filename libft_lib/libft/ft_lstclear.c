@@ -6,21 +6,28 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:33:43 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/09 17:02:56 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 04:46:48 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void ft_lstclear(t_stack **lst)
 {
-	t_stack *comp;
-	comp = *lst;
-	while (*lst)
+	t_stack *first;
+	t_stack *nxt;
+	t_stack *curr;
+
+	first = *lst;
+	curr = *lst;
+	while (curr)
 	{
-		*lst = comp->next;
-		free(comp);
-		comp = *lst;
+		nxt = curr->next;
+		free(curr);
+		if (nxt == first)
+			break;
+		curr = nxt;
 	}
 	*lst = NULL;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_conversion.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:23:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/11 21:13:12 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/20 04:43:17 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_arr *convert_input_to_i_arr(char **input)
 	while (input[i])
 		i++;
 	arr->arr = malloc(sizeof(int) * i);
-	if (!arr)
-		return (NULL);
+	if (!arr->arr)
+		return (free(arr), NULL);
 	i = 0;
 	while (input[k])
 	{

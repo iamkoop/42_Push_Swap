@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/18 23:07:23 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/20 02:46:01 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,22 @@ t_stack *create_initial_stack(t_arr *input_arr);
 int *sorted_arr(int *arr, int size);
 t_stack *ps_lstnew(int content, int index);
 void sort_turk(t_stack **a, t_stack **b);
-void sa(t_stack **a);
-void sb(t_stack **b);
+void sa(t_stack **a, int print);
+void sb(t_stack **b, int print);
 void ss(t_stack **a, t_stack **b);
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
-void ra(t_stack **a);
-void rb(t_stack **b);
+void ra(t_stack **a, int write);
+void rb(t_stack **b, int write);
 void rr(t_stack **a, t_stack **b);
-void rra(t_stack **a);
-void rrb(t_stack **b);
+void rra(t_stack **a, int print);
+void rrb(t_stack **b, int print);
 void rrr(t_stack **a, t_stack **b);
 void sort_3(t_stack **s);
 void sort_4(t_stack **a, t_stack **b);
 void sort_5(t_stack **a, t_stack **b);
 void find_smallest_op_and_exec(t_stack **a, t_stack **b);
 int ft_cttp(int max_a, int max_b, int current_a, int current_b);
+void exec_op(t_stack **a, t_stack **b, t_o_p *l_move_num);
 
 #endif

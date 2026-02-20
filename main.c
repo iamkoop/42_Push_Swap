@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/19 02:00:21 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/20 04:45:02 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 t_stacks *create_stacks()
 {
@@ -24,47 +25,19 @@ t_stacks *create_stacks()
 	return (stacks);
 }
 
-void print_stack(t_stack *stack)
-{
-	t_stack *s = stack;
-	if (!stack)
-		return;
-	int cnt = 0;
-
-	printf("Stack A\n");
-	printf("-------------------------------------------------------------------"
-		   "----------\n");
-	printf("Node %d\n", cnt);
-	printf("data       :%d\n", stack->data);
-	printf("curr index :%d\n", stack->index);
-	printf("prev index :%d\n", stack->prev->index);
-	printf("next index :%d\n", stack->next->index);
-	printf("-------------------------------------------------------------------"
-		   "----------\n");
-	stack = stack->next;
-	cnt++;
-	while (stack != s)
-	{
-		printf("---------------------------------------------------------------"
-			   "--------------\n");
-		printf("Node %d\n", cnt);
-		printf("data       :%d\n", stack->data);
-		printf("curr index :%d\n", stack->index);
-		printf("prev index :%d\n", stack->prev->index);
-		printf("next index :%d\n", stack->next->index);
-		printf("---------------------------------------------------------------"
-			   "--------------\n");
-		stack = stack->next;
-		cnt++;
-	}
-}
-
 static t_stack *create_initial_stack_from_args(char **input)
 {
 	t_arr *input_arr;
+	t_stack *stack;
 
 	input_arr = convert_input_to_i_arr(input);
-	return (create_initial_stack(input_arr));
+	if (!input_arr)
+		return (NULL);
+	stack = create_initial_stack(input_arr);
+	free(input_arr);
+	if (!stack)
+		return (NULL);
+	return (stack);
 }
 
 void sort(int argc, t_stack **a, t_stack **b)
@@ -72,7 +45,7 @@ void sort(int argc, t_stack **a, t_stack **b)
 	if (argc == 2)
 		return;
 	else if (argc == 3)
-		sa(a);
+		sa(a, 1);
 	else if (argc == 4)
 		sort_3(a);
 	else if (argc == 5)
@@ -106,6 +79,7 @@ int main(int argc, char **argv)
 	if (!stacks->stack_a)
 		return (0);
 	sort(argc, &stacks->stack_a, &stacks->stack_b);
+	ft_lstclear(&stacks->stack_a);
 	free(stacks);
 	return (1);
 }

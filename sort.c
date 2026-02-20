@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 00:05:35 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/16 19:00:04 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/20 04:00:25 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static void sort_3_help(t_stack **s, int op1, int op2)
 {
 	if (op1 == 1 || op2 == 1)
-		ra(s);
+		ra(s, 1);
 	if (op1 == 2 || op2 == 2)
-		rra(s);
+		rra(s, 1);
 	if (op1 == 3 || op2 == 3)
-		sa(s);
+		sa(s, 1);
 	return;
 }
 
@@ -63,14 +63,14 @@ void sort_4(t_stack **a, t_stack **b)
 	else if (cost_to_top <= 2)
 	{
 		while (cost_to_top-- > 0)
-			ra(a);
+			ra(a, 1);
 	}
 	else if (cost_to_top >= 3)
 	{
 		while (4 - cost_to_top-- > 0)
-			rra(a);
+			rra(a, 1);
 	}
-	pb(a,b);
+	pb(a, b);
 	sort_3(a);
 	pa(a, b);
 }
@@ -92,12 +92,12 @@ static void rotate_to_top(t_stack **a, t_stack **b, int index)
 	else if (cost_to_top <= 2)
 	{
 		while (cost_to_top-- > 0)
-			ra(a);
+			ra(a, 1);
 	}
 	else if (cost_to_top >= 3)
 	{
 		while (4 - cost_to_top-- > 0)
-			rra(a);
+			rra(a, 1);
 	}
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   turk_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 16:59:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/19 00:09:11 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/20 02:47:10 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static void initial_push_to_b(t_stack **a, t_stack **b, int max)
 	len = (*a)->prev->curr_i;
 
 	while ((*a)->index > middle)
-		ra(a);
+		ra(a, 1);
 	while (len > 2)
 	{
 		if ((*a)->index <= middle)
@@ -97,7 +97,7 @@ static void initial_push_to_b(t_stack **a, t_stack **b, int max)
 		else
 		{
 			pb(a, b);
-			rb(b);
+			rb(b, 1);
 		}
 		len--;
 	}
@@ -120,14 +120,14 @@ static void set_into_final_position(t_stack **a, int cnt, int index, int max)
 	{
 		while (index > 0)
 		{
-			rra(a);
+			rra(a, 1);
 			index--;
 		}
 		return;
 	}
 	while (cnt >= 0)
 	{
-		ra(a);
+		ra(a, 1);
 		cnt--;
 	}
 }
