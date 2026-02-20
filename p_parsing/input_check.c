@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:14:03 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 05:26:37 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/20 16:48:21 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int valid_num(char *str)
 {
 	int i;
 	long num;
+	int cnt;
 
 	i = 0;
 	if ((str[i] == '-') && !str[i + 1])
@@ -37,16 +38,18 @@ static int valid_num(char *str)
 	if (!ft_isdigit(str[i]) && (str[i] != '-'))
 		return (0);
 	i++;
+	cnt = 0;
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
+		cnt++;
 	}
 	num = ft_atol(str);
-	if ((num > 2147483647) || (num < -2147483648))
-		return (0);
-	return (1);
+	if ((num <= 2147483647) && (num >= -2147483648 )&& cnt <= 10)
+		return (1);
+	return (0);
 }
 
 static int valid_num_per_arg(char **input)
