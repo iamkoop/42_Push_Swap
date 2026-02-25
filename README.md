@@ -1,31 +1,29 @@
-# 42_Push_Swap
+*This project has been created as part of the 42 curriculum by <nildruon>*
 
-5 Nums in 12 operations or less
-3 in 3
-2 in 1
+# Description
 
-Todo's:
-input check ✅
-create stack ✅
-sorting:
-1-5 ✅
+This is Pushswap:
+A project aimed at sorting the inputs using given operations rotate, swap and reverse rotate.
+It takes numbers writen in the cmd as inputs converts them into a list and sorts them.
+I opted for the turk_algo that i optimized
 
-turk algo:
+# Instructions
 
-Push everything to b except 3 numbers
-find lowest amount of operation in the current constellation
--> if there is no number between the current num and next go to next num
-	->see if there is a num betwween the current abd the next. smallest of those.
-	-
--> when the best move is found save node in b that needs to be behind node a
--> after every succesful push to a reindex both a and b
+To run the program either do:
+	./push_swap arg1 arg2 arg3 | ./checker_linux arg1 arg2 arg3
 
-Go through each num is A.
-Find the nearest num in b that betwee
+or type and type:
 
-Helper func:
-func that index the current spots ✅
+	ARG="arg1 arg2 arg3"; ./push_swap $ARG | ./checker_OS $ARG
+	type chmod +x ./checker_linux to make the checker an executable
 
-Extra:
-if its cheaper to go both in one direction do it
-or if one is in the middle
+Note that the first works in all cases.
+The second one works only in bash since my program doenst accept multiple numbers in one argument.
+
+# Rescource:
+
+https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0
+
+This was a big insperation
+
+Ai was used for testing perpouses where i deemed it unescerry to write the whole unit_test by myself

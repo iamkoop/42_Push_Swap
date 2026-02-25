@@ -1,9 +1,0 @@
-{
-	"C_Cpp.default.includePath": [
-		"${workspaceFolder}/**",
-		"${workspaceFolder}/libft_lib/**"
-	],
-	"C_Cpp.default.compilerPath": "/usr/bin/cc",
-	"C_Cpp.default.cStandard": "c99",
-	"C_Cpp.default.intelliSenseMode": "linux-gcc-x64"
-}
