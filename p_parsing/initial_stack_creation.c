@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   initial_stack_creation.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 19:16:58 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/20 05:26:01 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/25 16:51:16 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int find_index(int num, int *arr, int size)
+static int	find_index(int num, int *arr, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size)
@@ -26,13 +26,12 @@ static int find_index(int num, int *arr, int size)
 	return (0);
 }
 
-static int fill_stack(int **arrs, t_stack *new, t_stack *first, int size)
+static int	fill_stack(int **arrs, t_stack *new, t_stack *first, int size)
 {
-	t_stack *prev;
-	int i;
+	t_stack	*prev;
+	int		i;
 
 	i = 1;
-
 	prev = new;
 	while (i < size)
 	{
@@ -49,15 +48,14 @@ static int fill_stack(int **arrs, t_stack *new, t_stack *first, int size)
 	return (1);
 }
 
-t_stack *create_initial_stack(t_arr *input_arr)
+t_stack	*create_initial_stack(t_arr *input_arr)
 {
-	int **arrs;
-	int size;
-	t_stack *stack;
-	t_stack *new;
+	int		**arrs;
+	int		size;
+	t_stack	*stack;
+	t_stack	*new;
 
 	size = input_arr->count;
-
 	arrs = unsorted_and_sorted(input_arr);
 	if (!arrs)
 		return (NULL);

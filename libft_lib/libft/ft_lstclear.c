@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:33:43 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 04:46:48 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/25 16:52:00 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void ft_lstclear(t_stack **lst)
+void	ft_lstclear(t_stack **lst)
 {
-	t_stack *first;
-	t_stack *nxt;
-	t_stack *curr;
+	t_stack	*first;
+	t_stack	*nxt;
+	t_stack	*curr;
 
 	first = *lst;
 	curr = *lst;
@@ -26,7 +26,7 @@ void ft_lstclear(t_stack **lst)
 		nxt = curr->next;
 		free(curr);
 		if (nxt == first)
-			break;
+			break ;
 		curr = nxt;
 	}
 	*lst = NULL;
@@ -34,13 +34,13 @@ void ft_lstclear(t_stack **lst)
 /* #include <stdio.h>
 #include <string.h>
 
-void del(void *content)
+void	del(void *content)
 {
 	printf("Deleting content: %s\n", (char *)content);
 	free(content);
 }
 
-void print_list(t_list *lst)
+void	print_list(t_list *lst)
 {
 	while (lst)
 	{
@@ -50,7 +50,7 @@ void print_list(t_list *lst)
 	printf("NULL\n");
 }
 
-int main(void)
+int	main(void)
 {
 	t_list *lst = NULL;
 
@@ -69,5 +69,5 @@ int main(void)
 	else
 		printf("lst is NOT NULL ❌\n");
 
-	return 0;
+	return (0);
 } */

@@ -6,15 +6,15 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:14:03 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 16:48:21 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:51:05 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int inputs(char **splitted, int ret)
+static int	inputs(char **splitted, int ret)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (splitted[i])
@@ -26,11 +26,11 @@ static int inputs(char **splitted, int ret)
 	return (ret);
 }
 
-static int valid_num(char *str)
+static int	valid_num(char *str)
 {
-	int i;
-	long num;
-	int cnt;
+	int		i;
+	long	num;
+	int		cnt;
 
 	i = 0;
 	if ((str[i] == '-') && !str[i + 1])
@@ -47,16 +47,16 @@ static int valid_num(char *str)
 		cnt++;
 	}
 	num = ft_atol(str);
-	if ((num <= 2147483647) && (num >= -2147483648 )&& cnt <= 10)
+	if ((num <= 2147483647) && (num >= -2147483648) && cnt <= 10)
 		return (1);
 	return (0);
 }
 
-static int valid_num_per_arg(char **input)
+static int	valid_num_per_arg(char **input)
 {
-	int i;
-	int s;
-	char **splitted;
+	int		i;
+	int		s;
+	char	**splitted;
 
 	i = 1;
 	s = 0;
@@ -80,12 +80,12 @@ static int valid_num_per_arg(char **input)
 	return (1);
 }
 
-static int duplicates(char **input, int ret)
+static int	duplicates(char **input, int ret)
 {
-	int i;
-	int k;
-	int num_to_cmp_with;
-	int curr_num;
+	int	i;
+	int	k;
+	int	num_to_cmp_with;
+	int	curr_num;
 
 	if (!ret)
 		return (0);
@@ -106,9 +106,9 @@ static int duplicates(char **input, int ret)
 	return (1);
 }
 
-int input_is_valid(char **input)
+int	input_is_valid(char **input)
 {
-	int ret;
+	int	ret;
 
 	ret = duplicates(input, valid_num_per_arg(input));
 	return (ret);

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 05:18:39 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/25 17:58:23 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stacks *create_stacks()
+t_stacks	*create_stacks(void)
 {
-	t_stacks *stacks;
+	t_stacks	*stacks;
 
 	stacks = malloc(sizeof(t_stacks));
 	if (!stacks)
@@ -24,10 +24,10 @@ t_stacks *create_stacks()
 	return (stacks);
 }
 
-static t_stack *create_initial_stack_from_args(char **input)
+static t_stack	*create_initial_stack_from_args(char **input)
 {
-	t_arr *input_arr;
-	t_stack *stack;
+	t_arr	*input_arr;
+	t_stack	*stack;
 
 	input_arr = convert_input_to_i_arr(input);
 	if (!input_arr)
@@ -39,14 +39,14 @@ static t_stack *create_initial_stack_from_args(char **input)
 	return (stack);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stacks *stacks;
+	t_stacks	*stacks;
 
 	if (argc < 2)
 	{
 		write(2, "Error\n", 6);
-		return (-1);
+		return (0);
 	}
 	if (!input_is_valid(argv))
 	{
@@ -56,7 +56,6 @@ int main(int argc, char **argv)
 	stacks = create_stacks();
 	if (!stacks)
 		return (0);
-
 	stacks->stack_a = create_initial_stack_from_args(argv);
 	stacks->stack_b = NULL;
 	if (!stacks->stack_a)

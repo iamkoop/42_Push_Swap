@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   input_conversion.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:23:47 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/20 05:26:24 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/02/25 16:50:45 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_arr *convert_input_to_i_arr(char **input)
+t_arr	*convert_input_to_i_arr(char **input)
 {
-	int i;
-	int k;
-	t_arr *arr;
+	int		i;
+	int		k;
+	t_arr	*arr;
 
 	arr = malloc(sizeof(t_arr));
 	if (!arr)
@@ -39,11 +39,11 @@ t_arr *convert_input_to_i_arr(char **input)
 	return (arr);
 }
 
-int **unsorted_and_sorted(t_arr *arr)
+int	**unsorted_and_sorted(t_arr *arr)
 {
-	int *unsorted;
-	int *sorted;
-	int **unsorted_and_sorted;
+	int	*unsorted;
+	int	*sorted;
+	int	**unsorted_and_sorted;
 
 	unsorted = arr->arr;
 	if (!unsorted)
