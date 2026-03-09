@@ -10,20 +10,24 @@ I opted for the turk_algo that i optimized
 # Instructions
 
 To run the program either do:
+
 	./push_swap arg1 arg2 arg3 | ./checker_linux arg1 arg2 arg3
 
-or type and type:
+or do:
 
 	ARG="arg1 arg2 arg3"; ./push_swap $ARG | ./checker_OS $ARG
-	type chmod +x ./checker_linux to make the checker an executable
+	
+to make ./checker_linux an excecutable do:
+
+	 chmod +x ./checker_linux
 
 Note that the first works in all cases.
 The second one works only in bash since my program doenst accept multiple numbers in one argument.
 
-# Rescource:
+# Rescources:
 
 https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0
 
-This was a big insperation
+This was a big insperation. Vaguely read through the idea and came up with a cool solution.
 
 Ai was used for testing perpouses where i deemed it unescerry to write the whole unit_test by myself

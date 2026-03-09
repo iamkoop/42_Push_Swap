@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:45 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/25 23:17:28 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/03/09 14:10:16 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	is_sorted(t_stack **stack)
 {
 	t_stack	*s;
 
-	if (!stack | !*stack)
+	if (!stack || !*stack)
 		return (1);
 	s = *stack;
 	while (s->next != *stack)
@@ -62,11 +62,6 @@ int	main(int argc, char **argv)
 {
 	t_stacks	*stacks;
 
-	if (argc < 2)
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
 	if (!input_is_valid(argv))
 	{
 		write(2, "Error\n", 6);
