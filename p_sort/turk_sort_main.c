@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 05:17:36 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/25 16:44:10 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:38:49 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	sort(int argc, t_stack **a, t_stack **b)
 		sa(a, 1);
 	else if (argc == 4)
 		sort_3(a);
-	else if (argc > 4)
+	else if (argc == 6)
+		sort_5(a,b);
+	else
 		sort_turk(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:31:22 by nildruon          #+#    #+#             */
-/*   Updated: 2026/02/25 16:52:40 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:34:06 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	rra(t_stack **a, int print);
 void	rrb(t_stack **b, int print);
 void	rrr(t_stack **a, t_stack **b);
 void	sort_3(t_stack **s);
-void	sort_4(t_stack **a, t_stack **b);
 void	sort_5(t_stack **a, t_stack **b);
 void	find_smallest_op_and_exec(t_stack **a, t_stack **b);
 int		ft_cttp(int max_a, int max_b, int current_a, int current_b);

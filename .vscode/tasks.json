@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with Make",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compiles the project using the Makefile"
+        },
+        {
+            "label": "Rebuild with Make",
+            "type": "shell",
+            "command": "make re",
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Full re-compile of the project"
+        },
+        {
+            "label": "Clean Build Files",
+            "type": "shell",
+            "command": "make fclean",
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Removes binary and object files"
+        }
+    ]
+}

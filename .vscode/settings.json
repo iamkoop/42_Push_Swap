@@ -1,0 +1,14 @@
+{
+	"C_Cpp.default.includePath": [
+		"${workspaceFolder}/**",
+		"${workspaceFolder}/libft_lib/**"
+	],
+	"C_Cpp.default.cStandard": "c11",
+	"C_Cpp.default.cppStandard": "c++17",
+	"C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+	"C_Cpp.errorSquiggles": "enabled",
+	"files.associations": {
+		"*.h": "c",
+		"*.c": "c"
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "(gdb) Debug Push Swap",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/push_swap",
+			"args": [
+				"5",
+				"2",
+				"4",
+				"3",
+				"1"
+			],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "Build with Make",
+			"miDebuggerPath": "/usr/bin/gdb",
+			"visualizerFile": "${workspaceFolder}/.vscode/gdb_pretty_printer.py",
+			"showDisplayString": true
+		},
+		{
+			"name": "(gdb) Debug Push Swap (Prompt for Args)",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/push_swap",
+			"args": [
+				"${input:argsPrompt}"
+			],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "Build with Make",
+			"miDebuggerPath": "/usr/bin/gdb"
+		}
+	],
+	"inputs": [
+		{
+			"id": "argsPrompt",
+			"type": "promptString",
+			"description": "Enter arguments for push_swap (e.g. 4 67 3 87 23)",
+			"default": "4 67 3 87 23"
+		}
+	]
+}
