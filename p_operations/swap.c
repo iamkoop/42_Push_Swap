@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:52:37 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/02/20 05:53:43 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2026/03/19 19:25:44 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
-	if (!b || !*a)
+	if (!a || !*a)
 		return ;
 	tmp = *a;
 	*a = tmp->next;

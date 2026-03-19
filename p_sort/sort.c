@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 00:05:35 by nilsdruon         #+#    #+#             */
-/*   Updated: 2026/03/19 15:05:15 by nildruon         ###   ########.fr       */
+/*   Updated: 2026/03/19 20:30:08 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	sort_3(t_stack **s)
 		sort_3_help(s, 1, 3);
 }
 
-static int find_smallest_num_i(t_stack **a)
+static int	find_smallest_num_i(t_stack **a)
 {
-	t_stack *tmp;
-	int i;
-	int num;
-	int index_with_smlst_n;
+	t_stack	*tmp;
+	int		i;
+	int		num;
+	int		index_with_smlst_n;
 
 	i = 0;
 	index_with_smlst_n = 0;
@@ -59,47 +59,53 @@ static int find_smallest_num_i(t_stack **a)
 	num = tmp->data;
 	while (1)
 	{
-		if(tmp->data < num )
+		if (tmp->data < num)
 		{
 			num = tmp->data;
 			index_with_smlst_n = i;
 		}
 		i++;
 		tmp = tmp->next;
-		if(tmp == *a)
-			break;
+		if (tmp == *a)
+			break ;
 	}
 	return (index_with_smlst_n);
 }
 
-void sort_5(t_stack	**a, t_stack	**b)
+static void	sort_5_help(t_stack	**a, t_stack	**b, int i, int smallest_num)
 {
-	t_stack *tmp;
-	int smallest_num;
-	int i;
-	int cnt;
+	int	cnt;
+	int	stack_size;
 
-	tmp = *a;
-	b = NULL;
-	i = 0;
 	cnt = 0;
+	stack_size = 4;
 	while (cnt++ < 2)
 	{
+		i = 0;
 		smallest_num = find_smallest_num_i(a);
-		if(smallest_num <= 2)
+		if (smallest_num <= 2)
 		{
 			while (i++ < smallest_num)
-				ra(a,1);
-			pb(a,b);
+				ra(a, 1);
+			pb(a, b);
 		}
 		else
 		{
-			while (smallest_num + i++ <= 4)
-				ra(a,1);
-			pb(a,b);
-		}	
+			while (smallest_num + i++ <= stack_size)
+				rra(a, 1);
+			pb(a, b);
+		}
+		stack_size--;
 	}
+}
+
+void	sort_5(t_stack	**a, t_stack	**b)
+{
+	t_stack	*tmp;
+
+	tmp = *a;
+	sort_5_help(a, b, 0, 0);
 	sort_3(a);
-	pa(a,b);
-	pa(a,b);
+	pa(a, b);
+	pa(a, b);
 }
